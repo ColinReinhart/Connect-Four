@@ -1,9 +1,11 @@
 require 'rspec'
 require './lib.connect_four.rb'
 
-describe GameBoard do
+describe ConnectFour do
   it 'exists' do
-    board = GameBoard.new
+    connect_four = ConnectFour.new
 
     expect(board).to be_an_instance_of(GameBoard)
   end
+
+end
