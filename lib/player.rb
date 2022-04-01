@@ -1,24 +1,13 @@
 class Player
-  attr_reader :human, :computer, :turn
+  attr_reader
 
-def initialize(human, player, turn)
-  @human = human
-  @computer = computer
-  @turn = turn
-  @turn_count = 0 #When turn count reached 42, game is a draw
-end
+  def initialize (name)
+    @name = name
+  end
 
-def human
-  #gets.chomp user input to select between A-G
-end
-
-def computer
-  #random selection between A-G
-end
-
-def turn
-  #One Human turn, then one player turn
-end
-turn_count += 1
+  def place_piece
+  end
+# if player selects A [:a1] = '.' then [:a1] = 'X'
+# [:a1] = '.'
 
 end
