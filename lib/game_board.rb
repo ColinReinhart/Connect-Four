@@ -5,56 +5,8 @@ class GameBoard
   attr_reader :game_board
 
   def initialize
-    game_board = {}
-    @a_cells = a_cells
-    @b_cells = {
-      b1: '.',
-      b2: '.',
-      b3: '.',
-      b4: '.',
-      b5: '.',
-      b6: '.'
-    }
-    @c_cells = {
-      c1: '.',
-      c2: '.',
-      c3: '.',
-      c4: '.',
-      c5: '.',
-      c6: "."
-    }
-    @d_cells = {
-      d1: '.',
-      d2: '.',
-      d3: '.',
-      d4: '.',
-      d5: '.',
-      d6: '.'
-    }
-    @e_cells = {
-      e1: '.',
-      e2: '.',
-      e3: '.',
-      e4: '.',
-      e5: '.',
-      e6: '.'
-    }
-    @f_cells = {
-      f1: '.',
-      f2: '.',
-      f3: '.',
-      f4: '.',
-      f5: '.',
-      f6: '.'
-    }
-    @g_cells = {
-      g1: '.',
-      g2: '.',
-      g3: '.',
-      g4: '.',
-      g5: '.',
-      g6: '.'
-    }
+    # game_board = {}
+
   end
   # def a_cells
   #   a_cells = {
@@ -66,6 +18,67 @@ class GameBoard
   #     a6: '.'
   #   }
   # end
+
+  def cells
+    cells = (
+      @a_cells = {
+          a1: '.',
+          a2: '.',
+          a3: '.',
+          a4: '.',
+          a5: '.',
+          a6: '.'
+        },
+      @b_cells = {
+        b1: '.',
+        b2: '.',
+        b3: '.',
+        b4: '.',
+        b5: '.',
+        b6: '.'
+      },
+      @c_cells = {
+        c1: '.',
+        c2: '.',
+        c3: '.',
+        c4: '.',
+        c5: '.',
+        c6: "."
+      },
+      @d_cells = {
+        d1: '.',
+        d2: '.',
+        d3: '.',
+        d4: '.',
+        d5: '.',
+        d6: '.'
+      },
+      @e_cells = {
+        e1: '.',
+        e2: '.',
+        e3: '.',
+        e4: '.',
+        e5: '.',
+        e6: '.'
+      },
+      @f_cells = {
+        f1: '.',
+        f2: '.',
+        f3: '.',
+        f4: '.',
+        f5: '.',
+        f6: '.'
+      },
+      @g_cells = {
+        g1: '.',
+        g2: '.',
+        g3: '.',
+        g4: '.',
+        g5: '.',
+        g6: '.'
+      })
+
+  end
 
   def game_board
     game_board =
