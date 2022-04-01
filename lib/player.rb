@@ -6,6 +6,7 @@ class Player
   end
 
   def place_piece
+    
   end
 # if player selects A [:a1] = '.' then [:a1] = 'X'
 # [:a1] = '.'
