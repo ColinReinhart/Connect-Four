@@ -1,25 +1,32 @@
-require './lib/game_board'
 class ConnectFour
-  attr_reader :puts_board
+  attr_reader :game_board
 
   def initialize
-    @puts_board = puts_board
+    @game_board = GameBoard.new
+
   end
-#
-#   def welcome
-    p "Welcome to the Kribs-Reinhart Connect 4"
-    p "In this game you will play against an unintelegent computer"
-    p "See if you can connect 4 before the Dumbputer does"
-    # Maybe put a gets.chomp in here for player name?
-    p "Type 'GO' to start the game"
-    p ">>>"
+
+  def welcome_message
+    # require 'pry'; binding.pry
+    "Welcome to the Kribs-Reinhart Connect 4\n"+
+    "In this game you will play against an unintelegent computer\n"+
+    "See if you can connect 4 before the Dumbputer does\n"+
+    "Type 'GO' to start the game\n"+
+    ">>>"
+  end
+
+  def new_board
+    @game_board.game_board 
+  end
+
+  # def ready_set
     input = gets.chomp.upcase
     if input == "GO"
-      game = GameBoard.new
-      
+      game_board = GameBoard.new
     else
       p "Fine, don't play our game"
     end
+    # return ready_set
   # end
 
   # def puts_board

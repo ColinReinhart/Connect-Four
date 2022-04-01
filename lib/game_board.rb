@@ -2,9 +2,10 @@
 require 'pry'
 
 class GameBoard
-  attr_reader :a_cells, :b_cells, :c_cells,
+  attr_reader :game_board
 
   def initialize
+    game_board = {}
     @a_cells = a_cells
     @b_cells = {
       b1: '.',
@@ -55,18 +56,19 @@ class GameBoard
       g6: '.'
     }
   end
-  def a_cells
-    a_cells = {
-      a1: '.',
-      a2: '.',
-      a3: '.',
-      a4: '.',
-      a5: '.',
-      a6: '.'
-    }
-  end
+  # def a_cells
+  #   a_cells = {
+  #     a1: '.',
+  #     a2: '.',
+  #     a3: '.',
+  #     a4: '.',
+  #     a5: '.',
+  #     a6: '.'
+  #   }
+  # end
 
-  def puts_board
+  def game_board
+    game_board =
     puts "A B C D E F G"
     print a_cells[:a6], " ", b_cells[:b6], " ", c_cells[:c6], " ", d_cells[:d6], " ", e_cells[:e6], " ", f_cells[:f6], " ", g_cells[:g6]
     puts ''
