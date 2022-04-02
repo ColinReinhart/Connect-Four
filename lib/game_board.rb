@@ -65,10 +65,29 @@ class GameBoard
   end
 
   def place_piece(column)
+
     if column.upcase == "A"
-      #if @a_cells.fetch(:a1) == '.'
+      if @a_cells.fetch(:a1) == '.'
          @a_cells[:a1] = 'X'
-      #end
+       elsif @a_cells.fetch(:a2) == '.'
+         @a_cells[:a2] = 'X'
+       elsif @a_cells.fetch(:a3) == '.'
+         @a_cells[:a3] = 'X'
+       elsif @a_cells.fetch(:a4) == '.'
+         @a_cells[:a4] = 'X'
+       elsif @a_cells.fetch(:a5) == '.'
+         @a_cells[:a5] = 'X'
+       elsif @a_cells.fetch(:a6) == '.'
+         @a_cells[:a6] = 'X'
+       else
+         p "Column full, pick again!"
+      end
+      # @a_cell.each do|key, value|
+      # if value == '.'
+      #   value = 'X'
+      #   break
+        # end
+      # end
     end
   end
 
