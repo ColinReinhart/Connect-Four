@@ -11,7 +11,7 @@ class GameBoard
       a4: '.',
       a5: '.',
       a6: '.'
-    },
+    }
     @b_cells = {
       b1: '.',
       b2: '.',
@@ -19,15 +19,15 @@ class GameBoard
       b4: '.',
       b5: '.',
       b6: '.'
-    },
+    }
     @c_cells = {
       c1: '.',
       c2: '.',
       c3: '.',
       c4: '.',
       c5: '.',
-      c6: "."
-    },
+      c6: '.'
+    }
     @d_cells = {
       d1: '.',
       d2: '.',
@@ -35,7 +35,7 @@ class GameBoard
       d4: '.',
       d5: '.',
       d6: '.'
-    },
+    }
     @e_cells = {
       e1: '.',
       e2: '.',
@@ -43,7 +43,7 @@ class GameBoard
       e4: '.',
       e5: '.',
       e6: '.'
-    },
+    }
     @f_cells = {
       f1: '.',
       f2: '.',
@@ -51,7 +51,7 @@ class GameBoard
       f4: '.',
       f5: '.',
       f6: '.'
-    },
+    }
     @g_cells = {
       g1: '.',
       g2: '.',
@@ -65,7 +65,7 @@ class GameBoard
 
   def display_board
     puts "A B C D E F G"
-    print @a_cells[:a1], " ", @b_cells[:b6], " ", @c_cells[:c6], " ", @d_cells[:d6], " ", @e_cells[:e6], " ", @f_cells[:f6], " ", @g_cells[:g6]
+    print @a_cells[:a6], " ", @b_cells[:b6], " ", @c_cells[:c6], " ", @d_cells[:d6], " ", @e_cells[:e6], " ", @f_cells[:f6], " ", @g_cells[:g6]
     puts ''
     print @a_cells[:a5], " ", @b_cells[:b5], " ", @c_cells[:c5], " ", @d_cells[:d5], " ", @e_cells[:e5], " ", @f_cells[:f5], " ", @g_cells[:g5]
     puts ''
@@ -76,6 +76,7 @@ class GameBoard
     print @a_cells[:a2], " ", @b_cells[:b2], " ", @c_cells[:c2], " ", @d_cells[:d2], " ", @e_cells[:e2], " ", @f_cells[:f2], " ", @g_cells[:g2]
     puts ''
     print @a_cells[:a1], " ", @b_cells[:b1], " ", @c_cells[:c1], " ", @d_cells[:d1], " ", @e_cells[:e1], " ", @f_cells[:f1], " ", @g_cells[:g1]
+    puts ''
   end
   # return display_board
 

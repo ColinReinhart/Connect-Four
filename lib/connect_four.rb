@@ -20,6 +20,8 @@ class ConnectFour
     ">>>"
   end
 
+  def start
+    puts welcome_message
     input = gets.chomp.upcase
     if input == "GO"
       game_board = GameBoard.new
@@ -27,5 +29,7 @@ class ConnectFour
     else
       p "Fine, don't play our game"
     end
-
+  end
 end
+    connect_four = ConnectFour.new
+    connect_four.start
