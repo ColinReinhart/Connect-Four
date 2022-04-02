@@ -1,23 +1,37 @@
-class ConnectFour
-  attr_reader :board
+require './lib/game_board'
+require './lib/player'
 
-  def initialize(board)
-    @board = board
+class ConnectFour
+  attr_reader :game_board
+
+  def initialize
+    @game_board = GameBoard.new
+
   end
 
-def welcome
-  p "Welcome to the Kribs-Reinhart Connect 4"
-  p "In this game you will play against an unintelegent computer"
-  p "See if you can connect 4 before the Dumbputer does"
-  # Maybe put a gets.chomp in here for player name?
-  p "Type 'GO' to start the game"
-  p ">>>"
-  input = gets.chomp.upcase
-  if input == "GO"
-    game = Game.new
-    game.start
-  else
-    p "Fine, don't play our game"
+  def new_board
+    @game_board.game_board
+  end
+
+  def welcome_message
+    puts "Welcome to the Kribs-Reinhart Connect 4\n"+
+    "In this game you will play against an unintelegent computer\n"+
+    "See if you can connect 4 before the Dumbputer does\n"+
+    "Type 'GO' to start the game\n"+
+    ">>>"
+  end
+
+  def start
+    puts welcome_message
+    input = gets.chomp.upcase
+    if input == "GO"
+      game_board = GameBoard.new
+      player1 = Player.new
+      game_board.display_board
+    else
+      p "Fine, don't play our game"
+    end
   end
 end
-welcome
+    connect_four = ConnectFour.new
+    connect_four.start
