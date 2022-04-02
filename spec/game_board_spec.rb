@@ -13,7 +13,7 @@ describe GameBoard do
     expect(new_board).to be_an_instance_of(GameBoard)
   end
 
-  xit 'has cells' do
+  it 'has cells' do
     new_board = GameBoard.new
     expect(new_board.cells).to eq([{:a1=>".", :a2=>".", :a3=>".", :a4=>".", :a5=>".", :a6=>"."},
         {:b1=>".", :b2=>".", :b3=>".", :b4=>".", :b5=>".", :b6=>"."},
@@ -35,7 +35,7 @@ describe GameBoard do
 
   xit 'has new game board' do
     game_board = GameBoard.new
-
+    binding.pry
   expect(game_board.new_board).to eq("A B C D E F G
     .......
     .......
@@ -45,4 +45,12 @@ describe GameBoard do
     .......")
   end
 
+  xit 'places a piece' do
+    game_board = GameBoard.new#("newgame")
+    player = Player.new("Wyatt")
+    #place_piece should find a hash and change it's value to 'X'
+    #player.place_piece("A")
+    binding.pry
+    expect(connect_four.game_board).to eq
+  end
 end

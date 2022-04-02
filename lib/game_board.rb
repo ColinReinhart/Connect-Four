@@ -1,9 +1,10 @@
 require 'pry'
 
 class GameBoard
-  attr_reader
+  attr_reader :a_cell
 
-  def initialize
+  def initialize #(game_board)
+    # @game_board = game_board
     @a_cells = {
       a1: '.',
       a2: '.',
@@ -63,6 +64,33 @@ class GameBoard
 
   end
 
+  def place_piece(column)
+
+    if column.upcase == "A"
+      if @a_cells.fetch(:a1) == '.'
+         @a_cells[:a1] = 'X'
+       elsif @a_cells.fetch(:a2) == '.'
+         @a_cells[:a2] = 'X'
+       elsif @a_cells.fetch(:a3) == '.'
+         @a_cells[:a3] = 'X'
+       elsif @a_cells.fetch(:a4) == '.'
+         @a_cells[:a4] = 'X'
+       elsif @a_cells.fetch(:a5) == '.'
+         @a_cells[:a5] = 'X'
+       elsif @a_cells.fetch(:a6) == '.'
+         @a_cells[:a6] = 'X'
+       else
+         p "Column full, pick again!"
+      end
+      # @a_cell.each do|key, value|
+      # if value == '.'
+      #   value = 'X'
+      #   break
+        # end
+      # end
+    end
+  end
+
   def display_board
     puts "A B C D E F G"
     print @a_cells[:a6], " ", @b_cells[:b6], " ", @c_cells[:c6], " ", @d_cells[:d6], " ", @e_cells[:e6], " ", @f_cells[:f6], " ", @g_cells[:g6]
@@ -78,6 +106,8 @@ class GameBoard
     print @a_cells[:a1], " ", @b_cells[:b1], " ", @c_cells[:c1], " ", @d_cells[:d1], " ", @e_cells[:e1], " ", @f_cells[:f1], " ", @g_cells[:g1]
     puts ''
   end
+
+
   # return display_board
 
     # def place_token

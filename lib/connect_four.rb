@@ -1,4 +1,5 @@
 require './lib/game_board'
+require './lib/player'
 
 class ConnectFour
   attr_reader :game_board
@@ -24,8 +25,14 @@ class ConnectFour
     puts welcome_message
     input = gets.chomp.upcase
     if input == "GO"
-      game_board = GameBoard.new
+      # game_board = GameBoard.new
+      # player1 = Player.new
+      10.times do
       game_board.display_board
+      chosen_spot = gets.chomp
+      @game_board.place_piece(chosen_spot)
+      game_board.display_board
+    end
     else
       p "Fine, don't play our game"
     end
