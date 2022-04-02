@@ -82,9 +82,7 @@ class GameBoard
        else
          p "Column full, pick again!"
       end
-    end
-
-    if column.upcase == "B"
+    elsif column.upcase == "B"
       if @b_cells.fetch(:b1) == '.'
          @b_cells[:b1] = 'X'
        elsif @b_cells.fetch(:b2) == '.'
@@ -100,7 +98,26 @@ class GameBoard
        else
          p "Column full, pick again!"
       end
+
+    elsif column.upcase == "C"
+      if @c_cells.fetch(:c1) == '.'
+         @c_cells[:c1] = 'X'
+       elsif @c_cells.fetch(:c2) == '.'
+         @c_cells[:c2] = 'X'
+       elsif @c_cells.fetch(:c3) == '.'
+         @c_cells[:c3] = 'X'
+       elsif @c_cells.fetch(:c4) == '.'
+         @c_cells[:c4] = 'X'
+       elsif @c_cells.fetch(:c5) == '.'
+         @c_cells[:c5] = 'X'
+       elsif @c_cells.fetch(:c6) == '.'
+         @c_cells[:c6] = 'X'
+       else
+         p "Column full, pick again!"
+      end
     end
+
+
   end
 
   def display_board

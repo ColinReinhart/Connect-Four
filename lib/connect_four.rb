@@ -27,11 +27,10 @@ class ConnectFour
     if input == "GO"
       # game_board = GameBoard.new
       # player1 = Player.new
-      10.times do
+      42.times do
       game_board.display_board
       chosen_spot = gets.chomp
       @game_board.place_piece(chosen_spot)
-      game_board.display_board
     end
     else
       p "Fine, don't play our game"
