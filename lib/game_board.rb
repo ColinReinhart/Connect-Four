@@ -1,5 +1,5 @@
 # require './spec/player.rb'
-
+#
 # class GameBoard
 #   attr_reader
 #
@@ -13,5 +13,21 @@
 # end
 
 
-board = {A:[1, 2, 3, 4, 5, 6], B:[1, 2, 3, 4, 5, 6]}
-p board[:A]
+board = {row0: ["A", "B", "C", "D", "E", "F", "G"],
+  row1:['.', '.', '.', '.', '.', '.', '.'],
+  row2:['.', '.', '.', '.', '.', '.', '.'],
+  row3:['.', '.', '.', '.', '.', '.', '.'],
+  row4:['.', '.', '.', '.', '.', '.', '.'],
+  row5:['.', '.', '.', '.', '.', '.', '.'],
+  row6:['.', '.', '.', '.', '.', '.', '.'],
+}
+
+
+# puts board
+p board[:row0]
+p board[:row1]
+p board[:row2]
+p board[:row3]
+p board[:row4]
+p board[:row5]
+p board[:row6]
