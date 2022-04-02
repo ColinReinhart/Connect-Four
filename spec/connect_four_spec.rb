@@ -14,7 +14,4 @@ Type 'GO' to start the game
 >>>")
     end
 
-    
-
-
 end
