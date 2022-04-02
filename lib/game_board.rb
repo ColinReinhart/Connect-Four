@@ -82,12 +82,24 @@ class GameBoard
        else
          p "Column full, pick again!"
       end
-      # @a_cell.each do|key, value|
-      # if value == '.'
-      #   value = 'X'
-      #   break
-        # end
-      # end
+    end
+
+    if column.upcase == "B"
+      if @b_cells.fetch(:b1) == '.'
+         @b_cells[:b1] = 'X'
+       elsif @b_cells.fetch(:b2) == '.'
+         @b_cells[:b2] = 'X'
+       elsif @b_cells.fetch(:b3) == '.'
+         @b_cells[:b3] = 'X'
+       elsif @b_cells.fetch(:b4) == '.'
+         @b_cells[:b4] = 'X'
+       elsif @b_cells.fetch(:b5) == '.'
+         @b_cells[:b5] = 'X'
+       elsif @b_cells.fetch(:b6) == '.'
+         @b_cells[:b6] = 'X'
+       else
+         p "Column full, pick again!"
+      end
     end
   end
 
