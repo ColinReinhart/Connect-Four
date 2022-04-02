@@ -1,7 +1,7 @@
 require 'pry'
 
 class GameBoard
-  attr_reader #:game_board
+  attr_reader :a_cell
 
   def initialize #(game_board)
     # @game_board = game_board
@@ -64,6 +64,14 @@ class GameBoard
 
   end
 
+  def place_piece(column)
+    if column.upcase == "A"
+      #if @a_cells.fetch(:a1) == '.'
+         @a_cells[:a1] = 'X'
+      #end
+    end
+  end
+
   def display_board
     puts "A B C D E F G"
     print @a_cells[:a6], " ", @b_cells[:b6], " ", @c_cells[:c6], " ", @d_cells[:d6], " ", @e_cells[:e6], " ", @f_cells[:f6], " ", @g_cells[:g6]
@@ -80,7 +88,7 @@ class GameBoard
     puts ''
   end
 
-  
+
   # return display_board
 
     # def place_token
