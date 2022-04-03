@@ -115,9 +115,74 @@ class GameBoard
        else
          p "Column full, pick again!"
       end
+    elsif column.upcase == "D"
+      if @d_cells.fetch(:d1) == '.'
+         @d_cells[:d1] = 'X'
+       elsif @d_cells.fetch(:d2) == '.'
+         @d_cells[:d2] = 'X'
+       elsif @d_cells.fetch(:d3) == '.'
+         @d_cells[:d3] = 'X'
+       elsif @d_cells.fetch(:d4) == '.'
+         @d_cells[:d4] = 'X'
+       elsif @d_cells.fetch(:d5) == '.'
+         @d_cells[:d5] = 'X'
+       elsif @d_cells.fetch(:d6) == '.'
+         @d_cells[:d6] = 'X'
+       else
+         p "Column full, pick again!"
+      end
+
+    elsif column.upcase == "E"
+      if @e_cells.fetch(:e1) == '.'
+         @e_cells[:e1] = 'X'
+       elsif @e_cells.fetch(:e2) == '.'
+         @e_cells[:e2] = 'X'
+       elsif @e_cells.fetch(:e3) == '.'
+         @e_cells[:e3] = 'X'
+       elsif @e_cells.fetch(:e4) == '.'
+         @e_cells[:e4] = 'X'
+       elsif @e_cells.fetch(:e5) == '.'
+         @e_cells[:e5] = 'X'
+       elsif @e_cells.fetch(:e6) == '.'
+         @e_cells[:e6] = 'X'
+       else
+         p "Column full, pick again!"
+      end
+
+    elsif column.upcase == "F"
+      if @f_cells.fetch(:f1) == '.'
+         @f_cells[:f1] = 'X'
+       elsif @f_cells.fetch(:f2) == '.'
+         @f_cells[:f2] = 'X'
+       elsif @f_cells.fetch(:f3) == '.'
+         @f_cells[:f3] = 'X'
+       elsif @f_cells.fetch(:f4) == '.'
+         @f_cells[:f4] = 'X'
+       elsif @f_cells.fetch(:f5) == '.'
+         @f_cells[:f5] = 'X'
+       elsif @f_cells.fetch(:f6) == '.'
+         @f_cells[:f6] = 'X'
+       else
+         p "Column full, pick again!"
+      end
+
+    elsif column.upcase == "G"
+      if @g_cells.fetch(:g1) == '.'
+         @g_cells[:g1] = 'X'
+       elsif @g_cells.fetch(:g2) == '.'
+         @g_cells[:g2] = 'X'
+       elsif @g_cells.fetch(:g3) == '.'
+         @g_cells[:g3] = 'X'
+       elsif @g_cells.fetch(:g4) == '.'
+         @g_cells[:g4] = 'X'
+       elsif @g_cells.fetch(:g5) == '.'
+         @g_cells[:g5] = 'X'
+       elsif @g_cells.fetch(:g6) == '.'
+         @g_cells[:g6] = 'X'
+       else
+         p "Column full, pick again!"
+      end
     end
-
-
   end
 
   def display_board
