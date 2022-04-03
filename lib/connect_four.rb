@@ -2,11 +2,11 @@ require './lib/game_board'
 require './lib/player'
 
 class ConnectFour
-  attr_reader :game_board
+  attr_reader :game_board, :turn_count
 
   def initialize
     @game_board = GameBoard.new
-
+    @turn_count = 1
   end
 
   def new_board
@@ -27,10 +27,21 @@ class ConnectFour
     if input == "GO"
       # game_board = GameBoard.new
       # player1 = Player.new
-      42.times do
+      1000.times do
+      p "player turn!"
       game_board.display_board
       chosen_spot = gets.chomp
       @game_board.place_piece(chosen_spot)
+      p "computer turn!"
+      game_board.display_board
+      computer_spot = game_board.computer_brain.shuffle
+      @game_board.computer_piece(computer_spot[0])
+
+      p "turn #{turn_count}"
+      @turn_count += 1
+      if @turn_count == 21
+        p "the game is a draw"
+      end
     end
     else
       p "Fine, don't play our game"
