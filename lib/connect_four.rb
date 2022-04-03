@@ -27,7 +27,7 @@ class ConnectFour
     if input == "GO"
       # game_board = GameBoard.new
       # player1 = Player.new
-      1000.times do
+      loop do
       p "player turn!"
       game_board.display_board
       chosen_spot = gets.chomp
@@ -41,6 +41,7 @@ class ConnectFour
       @turn_count += 1
       if @turn_count == 21
         p "the game is a draw"
+        break
       end
     end
     else

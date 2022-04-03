@@ -191,7 +191,7 @@ class GameBoard
   end
 
   def computer_brain
-    ["A", "B", "C" "D", "E", "F", "G"]
+    ["A", "B", "C", "D", "E", "F", "G"]
   end
 
   def computer_invalid
@@ -336,6 +336,10 @@ class GameBoard
     puts ''
   end
 
+  def reset_board
+    @a_cells.values << "."
+    
+  end
 
 
 
