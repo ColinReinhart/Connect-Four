@@ -336,10 +336,7 @@ class GameBoard
     puts ''
   end
 
-  def reset_board
-    @a_cells.values << "."
-    
-  end
+  
 
 
 
