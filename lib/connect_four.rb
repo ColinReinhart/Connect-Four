@@ -31,7 +31,6 @@ class ConnectFour
       game_board.display_board
       chosen_spot = gets.chomp
       @game_board.place_piece(chosen_spot)
-      game_board.display_board
     end
     else
       p "Fine, don't play our game"
