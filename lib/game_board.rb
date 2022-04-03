@@ -64,8 +64,13 @@ class GameBoard
 
   end
 
-  def invalid_choice
+  def column_full
     p "Column full, pick again"
+    place_piece(gets.chomp)
+  end
+
+  def invalid_choice
+    p "Invalid selection, please choose a letter A_G."
     place_piece(gets.chomp)
   end
 
@@ -84,8 +89,8 @@ class GameBoard
        @a_cells[:a5] = 'X'
       elsif @a_cells.fetch(:a6) == '.'
         @a_cells[:a6] = 'X'
-      else
-       invalid_choice
+      else @a_cells.fetch(:a6) == 'X' || 'O'
+       column_full
       end
     elsif column.upcase == "B"
       if @b_cells.fetch(:b1) == '.'
@@ -101,7 +106,7 @@ class GameBoard
       elsif @b_cells.fetch(:b6) == '.'
        @b_cells[:b6] = 'X'
       else
-       invalid_choice
+       column_full
       end
 
     elsif column.upcase == "C"
@@ -118,7 +123,7 @@ class GameBoard
       elsif @c_cells.fetch(:c6) == '.'
        @c_cells[:c6] = 'X'
       else
-       invalid_choice
+       column_full
       end
     elsif column.upcase == "D"
       if @d_cells.fetch(:d1) == '.'
@@ -134,7 +139,7 @@ class GameBoard
       elsif @d_cells.fetch(:d6) == '.'
        @d_cells[:d6] = 'X'
       else
-       invalid_choice
+       column_full
       end
 
     elsif column.upcase == "E"
@@ -151,7 +156,7 @@ class GameBoard
       elsif @e_cells.fetch(:e6) == '.'
        @e_cells[:e6] = 'X'
       else
-       invalid_choice
+       column_full
       end
 
     elsif column.upcase == "F"
@@ -168,7 +173,7 @@ class GameBoard
       elsif @f_cells.fetch(:f6) == '.'
        @f_cells[:f6] = 'X'
       else
-       invalid_choice
+       column_full
       end
 
     elsif column.upcase == "G"
@@ -185,8 +190,11 @@ class GameBoard
       elsif @g_cells.fetch(:g6) == '.'
        @g_cells[:g6] = 'X'
       else
-       invalid_choice
+       column_full
       end
+
+    else
+      invalid_choice
     end
   end
 
@@ -335,8 +343,6 @@ class GameBoard
     print @a_cells[:a1], " ", @b_cells[:b1], " ", @c_cells[:c1], " ", @d_cells[:d1], " ", @e_cells[:e1], " ", @f_cells[:f1], " ", @g_cells[:g1]
     puts ''
   end
-
-  
 
 
 
