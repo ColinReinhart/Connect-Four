@@ -1,7 +1,7 @@
 require 'pry'
 
 class GameBoard
-  attr_reader :a_cells, :b_cells, :c_cells, :d_cells,
+  attr_reader :cell_sum, :a_cells, :b_cells, :c_cells, :d_cells, :e_cells, :f_cells, :g_cells
 
   def initialize #(game_board)
     # @game_board = game_board
@@ -61,6 +61,8 @@ class GameBoard
       g5: '.',
       g6: '.'
     }
+    @cell_sum = 0
+
 
   end
 
@@ -212,117 +214,117 @@ class GameBoard
     if column.upcase == "A"
       if @a_cells.fetch(:a1) == '.'
          @a_cells[:a1] = 'O'
-       elsif @a_cells.fetch(:a2) == '.'
+      elsif @a_cells.fetch(:a2) == '.'
          @a_cells[:a2] = 'O'
-       elsif @a_cells.fetch(:a3) == '.'
+      elsif @a_cells.fetch(:a3) == '.'
          @a_cells[:a3] = 'O'
-       elsif @a_cells.fetch(:a4) == '.'
+      elsif @a_cells.fetch(:a4) == '.'
          @a_cells[:a4] = 'O'
-       elsif @a_cells.fetch(:a5) == '.'
+      elsif @a_cells.fetch(:a5) == '.'
          @a_cells[:a5] = 'O'
-       elsif @a_cells.fetch(:a6) == '.'
+      elsif @a_cells.fetch(:a6) == '.'
          @a_cells[:a6] = 'O'
-       else
+      else
          computer_invalid
       end
     elsif column.upcase == "B"
       if @b_cells.fetch(:b1) == '.'
          @b_cells[:b1] = 'O'
-       elsif @b_cells.fetch(:b2) == '.'
+      elsif @b_cells.fetch(:b2) == '.'
          @b_cells[:b2] = 'O'
-       elsif @b_cells.fetch(:b3) == '.'
+      elsif @b_cells.fetch(:b3) == '.'
          @b_cells[:b3] = 'O'
-       elsif @b_cells.fetch(:b4) == '.'
+      elsif @b_cells.fetch(:b4) == '.'
          @b_cells[:b4] = 'O'
-       elsif @b_cells.fetch(:b5) == '.'
+      elsif @b_cells.fetch(:b5) == '.'
          @b_cells[:b5] = 'O'
-       elsif @b_cells.fetch(:b6) == '.'
+      elsif @b_cells.fetch(:b6) == '.'
          @b_cells[:b6] = 'O'
-       else
+      else
          computer_invalid
       end
 
     elsif column.upcase == "C"
       if @c_cells.fetch(:c1) == '.'
          @c_cells[:c1] = 'O'
-       elsif @c_cells.fetch(:c2) == '.'
+      elsif @c_cells.fetch(:c2) == '.'
          @c_cells[:c2] = 'O'
-       elsif @c_cells.fetch(:c3) == '.'
+      elsif @c_cells.fetch(:c3) == '.'
          @c_cells[:c3] = 'O'
-       elsif @c_cells.fetch(:c4) == '.'
+      elsif @c_cells.fetch(:c4) == '.'
          @c_cells[:c4] = 'O'
-       elsif @c_cells.fetch(:c5) == '.'
+      elsif @c_cells.fetch(:c5) == '.'
          @c_cells[:c5] = 'O'
-       elsif @c_cells.fetch(:c6) == '.'
+      elsif @c_cells.fetch(:c6) == '.'
          @c_cells[:c6] = 'O'
-       else
+      else
          computer_invalid
       end
     elsif column.upcase == "D"
       if @d_cells.fetch(:d1) == '.'
          @d_cells[:d1] = 'O'
-       elsif @d_cells.fetch(:d2) == '.'
+      elsif @d_cells.fetch(:d2) == '.'
          @d_cells[:d2] = 'O'
-       elsif @d_cells.fetch(:d3) == '.'
+      elsif @d_cells.fetch(:d3) == '.'
          @d_cells[:d3] = 'O'
-       elsif @d_cells.fetch(:d4) == '.'
+      elsif @d_cells.fetch(:d4) == '.'
          @d_cells[:d4] = 'O'
-       elsif @d_cells.fetch(:d5) == '.'
+      elsif @d_cells.fetch(:d5) == '.'
          @d_cells[:d5] = 'O'
-       elsif @d_cells.fetch(:d6) == '.'
+      elsif @d_cells.fetch(:d6) == '.'
          @d_cells[:d6] = 'O'
-       else
+      else
          computer_invalid
       end
 
     elsif column.upcase == "E"
       if @e_cells.fetch(:e1) == '.'
          @e_cells[:e1] = 'O'
-       elsif @e_cells.fetch(:e2) == '.'
+      elsif @e_cells.fetch(:e2) == '.'
          @e_cells[:e2] = 'O'
-       elsif @e_cells.fetch(:e3) == '.'
+      elsif @e_cells.fetch(:e3) == '.'
          @e_cells[:e3] = 'O'
-       elsif @e_cells.fetch(:e4) == '.'
+      elsif @e_cells.fetch(:e4) == '.'
          @e_cells[:e4] = 'O'
-       elsif @e_cells.fetch(:e5) == '.'
+      elsif @e_cells.fetch(:e5) == '.'
          @e_cells[:e5] = 'O'
-       elsif @e_cells.fetch(:e6) == '.'
+      elsif @e_cells.fetch(:e6) == '.'
          @e_cells[:e6] = 'O'
-       else
+      else
          computer_invalid
       end
 
     elsif column.upcase == "F"
       if @f_cells.fetch(:f1) == '.'
          @f_cells[:f1] = 'O'
-       elsif @f_cells.fetch(:f2) == '.'
+      elsif @f_cells.fetch(:f2) == '.'
          @f_cells[:f2] = 'O'
-       elsif @f_cells.fetch(:f3) == '.'
+      elsif @f_cells.fetch(:f3) == '.'
          @f_cells[:f3] = 'O'
-       elsif @f_cells.fetch(:f4) == '.'
+      elsif @f_cells.fetch(:f4) == '.'
          @f_cells[:f4] = 'O'
-       elsif @f_cells.fetch(:f5) == '.'
+      elsif @f_cells.fetch(:f5) == '.'
          @f_cells[:f5] = 'O'
-       elsif @f_cells.fetch(:f6) == '.'
+      elsif @f_cells.fetch(:f6) == '.'
          @f_cells[:f6] = 'O'
-       else
+      else
          computer_invalid
       end
 
     elsif column.upcase == "G"
       if @g_cells.fetch(:g1) == '.'
          @g_cells[:g1] = 'O'
-       elsif @g_cells.fetch(:g2) == '.'
+      elsif @g_cells.fetch(:g2) == '.'
          @g_cells[:g2] = 'O'
-       elsif @g_cells.fetch(:g3) == '.'
+      elsif @g_cells.fetch(:g3) == '.'
          @g_cells[:g3] = 'O'
-       elsif @g_cells.fetch(:g4) == '.'
+      elsif @g_cells.fetch(:g4) == '.'
          @g_cells[:g4] = 'O'
-       elsif @g_cells.fetch(:g5) == '.'
+      elsif @g_cells.fetch(:g5) == '.'
          @g_cells[:g5] = 'O'
-       elsif @g_cells.fetch(:g6) == '.'
+      elsif @g_cells.fetch(:g6) == '.'
          @g_cells[:g6] = 'O'
-       else
+      else
          computer_invalid
       end
     end
@@ -344,17 +346,34 @@ class GameBoard
     puts ''
   end
 
-  def horizontal_win
-    
+  # def horizontal_win?
+  #   #Wyatt is working on this
+  # end
+
+  def vertical_win?
+    if @a_cells.fetch_values == ["X", "X", "X", "X", ".", "."] || ["O", "X", "X", "X", "X", "."] || ["X", "O", "X", "X", "X", "X"] || ["O", "O", "X", "X", "X", "X"]
+      vertical_win? == true
+    else
+      vertical_win? == false
+    end
   end
-
-  def vertical_win
-
-  end
-
-  def diagonal_win
-
-  end
+  # def vertical_win
+  #   @a_cells.values.each do |cell_array|
+  #     cell_array.each do |cell|
+  #         if cell == "X"
+  #           @cell_sum += 1
+  #         else #cell == '.' || 'O'
+  #             @cell_sum = 0
+  #           if @cell_sum == 4
+  #             vertical_win? == true
+  #           end
+  #         end
+  #     end
+  #   end
+  # end
+  # def diagonal_win?
+  #
+  # end
 
   # return display_board
 
@@ -363,5 +382,4 @@ class GameBoard
     #     hash.value == '.'
     #   end
     # end
-
 end
