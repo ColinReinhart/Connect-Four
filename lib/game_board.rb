@@ -62,6 +62,7 @@ class GameBoard
       g6: '.'
     }
     @cell_sum = 0
+    @win = false
 
 
   end
@@ -350,27 +351,28 @@ class GameBoard
   #   #Wyatt is working on this
   # end
 
-  def vertical_win?
-    if @a_cells.fetch_values == ["X", "X", "X", "X", ".", "."] || ["O", "X", "X", "X", "X", "."] || ["X", "O", "X", "X", "X", "X"] || ["O", "O", "X", "X", "X", "X"]
-      vertical_win? == true
-    else
-      vertical_win? == false
-    end
-  end
-  # def vertical_win
-  #   @a_cells.values.each do |cell_array|
-  #     cell_array.each do |cell|
-  #         if cell == "X"
-  #           @cell_sum += 1
-  #         else #cell == '.' || 'O'
-  #             @cell_sum = 0
-  #           if @cell_sum == 4
-  #             vertical_win? == true
-  #           end
-  #         end
-  #     end
+  # def vertical_win?
+  #   if @a_cells.fetch_values == ["X", "X", "X", "X", ".", "."] || ["O", "X", "X", "X", "X", "."] || ["X", "O", "X", "X", "X", "X"] || ["O", "O", "X", "X", "X", "X"]
+  #     vertical_win? == true
+  #   else
+  #     vertical_win? == false
   #   end
   # end
+  def vertical_win?
+    vert_array = @a_cells.fetch_values(:a1, :a2, :a3, :a4, :a5, :a6)
+    vert_array.each do |cell|
+      if cell == "X"
+        @cell_sum += 1
+      elsif cell == 'O'
+        @cell_sum = 0
+      else cell == "."
+        @cell_sum += 0
+        if @cell_sum == 4
+          vertical_win? != false
+        end
+      end
+    end
+  end
   # def diagonal_win?
   #
   # end
