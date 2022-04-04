@@ -1,7 +1,7 @@
 require 'pry'
 
 class GameBoard
-  attr_reader :a_cell
+  attr_reader :a_cells, :b_cells, :c_cells, :d_cells,
 
   def initialize #(game_board)
     # @game_board = game_board
@@ -344,7 +344,17 @@ class GameBoard
     puts ''
   end
 
-      
+  def horizontal_win
+    
+  end
+
+  def vertical_win
+
+  end
+
+  def diagonal_win
+
+  end
 
   # return display_board
 

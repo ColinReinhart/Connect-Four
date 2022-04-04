@@ -46,11 +46,67 @@ describe GameBoard do
   end
 
   xit 'places a piece' do
-    game_board = GameBoard.new#("newgame")
-    player = Player.new("Wyatt")
-    #place_piece should find a hash and change it's value to 'X'
-    #player.place_piece("A")
-    binding.pry
-    expect(connect_four.game_board).to eq
+    game_board = GameBoard.new
+    new_board.place_piece("A")
+
+
+    expect(new_board.a_cells[:a1]).to eq("X")
+  end
+
+  xit 'sends error message when column full' do
+
+  end
+
+  xit 'can validate a horizontal win' do
+    game_board.a_cells[:a1] = "X"
+    game_board.a_cells[:b1] = "X"
+    game_board.a_cells[:c1] = "X"
+    game_board.a_cells[:d1] = "X"
+
+    expect(game_board.horizontal_win).to eq(true)
+  end
+
+  xit 'can validate a verticle win' do
+    game_board.a_cells[:a1] = "X"
+    game_board.a_cells[:a2] = "X"
+    game_board.a_cells[:a3] = "X"
+    game_board.a_cells[:a4] = "X"
+
+  expect(game_board.vertical_win).to eq(true)
+  end
+
+  xit 'can validate a diagonal win' do
+    game_board.a_cells[:a1] = "X"
+    game_board.a_cells[:b2] = "X"
+    game_board.a_cells[:c3] = "X"
+    game_board.a_cells[:d4] = "X"
+
+  expect(game_board.diagonal_win).to eq(true)
+  end
+
+  xit 'can validate a horizontal win' do
+    game_board.a_cells[:c4] = "X"
+    game_board.a_cells[:d4] = "X"
+    game_board.a_cells[:e4] = "X"
+    game_board.a_cells[:f4] = "X"
+
+    expect(game_board.horizontal_win).to eq(true)
+  end
+
+  xit 'can validate a verticle win' do
+    game_board.a_cells[:g6] = "X"
+    game_board.a_cells[:g5] = "X"
+    game_board.a_cells[:g4] = "X"
+    game_board.a_cells[:g3] = "X"
+
+  expect(game_board.vertical_win).to eq(true)
+  end
+  xit 'can validate a diagonal win' do
+    game_board.a_cells[:g6] = "X"
+    game_board.a_cells[:f5] = "X"
+    game_board.a_cells[:e4] = "X"
+    game_board.a_cells[:d3] = "X"
+
+  expect(game_board.diagonal_win).to eq(true)
   end
 end
