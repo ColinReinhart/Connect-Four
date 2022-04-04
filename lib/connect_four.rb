@@ -10,8 +10,10 @@ class ConnectFour
   end
 
   def new_board
-    @game_board.game_board
+    @game_board = GameBoard.new
+    @turn_count = 0
   end
+
 
   def welcome_message
     puts "Welcome to the Kribs-Reinhart Connect 4\n"+
@@ -45,14 +47,17 @@ class ConnectFour
         if @turn_count == 42
           game_board.display_board
           p "it's a Draw"
+          new_board
           break
         end
       end
     else
       p "Fine, don't play our game"
+      break
     end
   end
   end
     connect_four = ConnectFour.new
     connect_four.start
 end
+   
