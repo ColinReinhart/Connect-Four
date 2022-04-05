@@ -347,10 +347,6 @@ class GameBoard
     puts ''
   end
 
-  # def horizontal_win?
-  #   #Wyatt is working on this
-  # end
-
   def vertical_win?
     vert_array = @a_cells.fetch_values(:a1, :a2, :a3, :a4, :a5, :a6)
     vert_array.each do |cell|
@@ -458,9 +454,156 @@ class GameBoard
       false
     end
   end
-  # def diagonal_win?
-  #
-  # end
 
+  def player_horizontal_win?
+    hor_array1 = [
+      @a_cells.fetch_values(:a1),
+      @b_cells.fetch_values(:b1),
+      @c_cells.fetch_values(:c1),
+      @d_cells.fetch_values(:d1),
+      @e_cells.fetch_values(:e1),
+      @f_cells.fetch_values(:f1),
+      @g_cells.fetch_values(:g1)
+    ]
+    hor_array1.flatten.each do |cell|
+      if cell == "X"
+        @cell_sum += 1
+      elsif cell == 'O'
+        @cell_sum = 0
+      else
+        @cell_sum += 0
+      end
+    end
+    # return @cell_sum
+    if @cell_sum == 4
+      true
+    else
+      false
+    end
+
+    hor_array2 = [
+      @a_cells.fetch_values(:a2),
+      @b_cells.fetch_values(:b2),
+      @c_cells.fetch_values(:c2),
+      @d_cells.fetch_values(:d2),
+      @e_cells.fetch_values(:e2),
+      @f_cells.fetch_values(:f2),
+      @g_cells.fetch_values(:g2)
+    ]
+    hor_array2.flatten.each do |cell|
+      if cell == "X"
+        @cell_sum += 1
+      elsif cell == 'O'
+        @cell_sum = 0
+      else
+        @cell_sum += 0
+      end
+    end
+    # return @cell_sum
+    if @cell_sum == 4
+      true
+    else
+      false
+    end
+
+    hor_array3 = [
+      @a_cells.fetch_values(:a3),
+      @b_cells.fetch_values(:b3),
+      @c_cells.fetch_values(:c3),
+      @d_cells.fetch_values(:d3),
+      @e_cells.fetch_values(:e3),
+      @f_cells.fetch_values(:f3),
+      @g_cells.fetch_values(:g3)
+    ]
+    hor_array3.flatten.each do |cell|
+      if cell == "X"
+        @cell_sum += 1
+      elsif cell == 'O'
+        @cell_sum = 0
+      else
+        @cell_sum += 0
+      end
+    end
+    # return @cell_sum
+    if @cell_sum == 4
+      true
+    else
+      false
+    end
+
+    hor_array4 = [
+      @a_cells.fetch_values(:a4),
+      @b_cells.fetch_values(:b4),
+      @c_cells.fetch_values(:c4),
+      @d_cells.fetch_values(:d4),
+      @e_cells.fetch_values(:e4),
+      @f_cells.fetch_values(:f4),
+      @g_cells.fetch_values(:g4)
+    ]
+    hor_array4.flatten.each do |cell|
+      if cell == "X"
+        @cell_sum += 1
+      elsif cell == 'O'
+        @cell_sum = 0
+      else
+        @cell_sum += 0
+      end
+    end
+    if @cell_sum == 4
+      true
+    else
+      false
+    end
+
+    hor_array5 = [
+      @a_cells.fetch_values(:a5),
+      @b_cells.fetch_values(:b5),
+      @c_cells.fetch_values(:c5),
+      @d_cells.fetch_values(:d5),
+      @e_cells.fetch_values(:e5),
+      @f_cells.fetch_values(:f5),
+      @g_cells.fetch_values(:g5)
+    ]
+    hor_array5.flatten.each do |cell|
+      if cell == "X"
+        @cell_sum += 1
+      elsif cell == 'O'
+        @cell_sum = 0
+      else
+        @cell_sum += 0
+      end
+    end
+    if @cell_sum == 4
+      true
+    else
+      false
+    end
+
+    hor_array6 = [
+      @a_cells.fetch_values(:a6),
+      @b_cells.fetch_values(:b6),
+      @c_cells.fetch_values(:c6),
+      @d_cells.fetch_values(:d6),
+      @e_cells.fetch_values(:e6),
+      @f_cells.fetch_values(:f6),
+      @g_cells.fetch_values(:g6)
+    ]
+    hor_array6.flatten.each do |cell|
+      if cell == "X"
+        @cell_sum += 1
+      elsif cell == 'O'
+        @cell_sum = 0
+      else
+        @cell_sum += 0
+      end
+    end
+    # return @cell_sum
+    if @cell_sum == 4
+      true
+    else
+      false
+    end
+  end
+ 
 
 end
