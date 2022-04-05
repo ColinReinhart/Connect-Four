@@ -63,16 +63,19 @@ describe GameBoard do
     game_board.a_cells[:c1] = "X"
     game_board.a_cells[:d1] = "X"
 
-    expect(game_board.horizontal_win).to eq(true)
+    expect(game_board.horizontal_win?).to eq(true)
   end
 
-  xit 'can validate a verticle win' do
-    game_board.a_cells[:a1] = "X"
-    game_board.a_cells[:a2] = "X"
-    game_board.a_cells[:a3] = "X"
-    game_board.a_cells[:a4] = "X"
+  it 'can validate a vertical win' do
+    game_board = GameBoard.new
+    # binding.pry
 
-  expect(game_board.vertical_win).to eq(true)
+    game_board.a_cells[:a1] = 'X'
+    game_board.a_cells[:a2] = 'X'
+    game_board.a_cells[:a3] = 'X'
+    game_board.a_cells[:a4] = 'X'
+# binding.pry
+  expect(game_board.vertical_win?).to eq(true)
   end
 
   xit 'can validate a diagonal win' do
@@ -81,11 +84,12 @@ describe GameBoard do
     game_board.a_cells[:c3] = "X"
     game_board.a_cells[:d4] = "X"
 
-  expect(game_board.diagonal_win).to eq(true)
+  expect(game_board.diagonal_win?).to eq(true)
   end
 
   it 'can validate a horizontal win' do
     game_board = GameBoard.new
+
 
     game_board.a_cells[:a1] = "X"
     game_board.b_cells[:b1] = "X"
@@ -104,15 +108,18 @@ describe GameBoard do
     game_board.g_cells[:g1] = "X"
     # binding.pry
     expect(game_board.player_horizontal_win?).to eq(true)
+
   end
 
-  xit 'can validate a verticle win' do
-    game_board.a_cells[:g6] = "X"
-    game_board.a_cells[:g5] = "X"
-    game_board.a_cells[:g4] = "X"
-    game_board.a_cells[:g3] = "X"
+  it 'can validate a verticle win' do
+    game_board = GameBoard.new
 
-  expect(game_board.vertical_win).to eq(true)
+    game_board.b_cells[:b6] = "X"
+    game_board.b_cells[:b5] = "X"
+    game_board.b_cells[:b4] = "X"
+    game_board.b_cells[:b3] = "X"
+
+  expect(game_board.vertical_win?).to eq(true)
   end
   xit 'can validate a diagonal win' do
     game_board.a_cells[:g6] = "X"
@@ -120,6 +127,6 @@ describe GameBoard do
     game_board.a_cells[:e4] = "X"
     game_board.a_cells[:d3] = "X"
 
-  expect(game_board.diagonal_win).to eq(true)
+  expect(game_board.diagonal_win?).to eq(true)
   end
 end

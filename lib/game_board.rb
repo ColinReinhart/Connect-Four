@@ -347,10 +347,6 @@ class GameBoard
     puts ''
   end
 
-  # def horizontal_win?
-  #   #Wyatt is working on this
-  # end
-
   def vertical_win?
     vert_array = @a_cells.fetch_values(:a1, :a2, :a3, :a4, :a5, :a6)
     vert_array.each do |cell|
@@ -553,7 +549,6 @@ class GameBoard
         @cell_sum += 0
       end
     end
-    # return @cell_sum
     if @cell_sum == 4
       true
     else
@@ -578,7 +573,6 @@ class GameBoard
         @cell_sum += 0
       end
     end
-    # return @cell_sum
     if @cell_sum == 4
       true
     else
@@ -610,9 +604,6 @@ class GameBoard
       false
     end
   end
-  # def diagonal_win?
-  #
-  # end
-
+ 
 
 end
