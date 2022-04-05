@@ -369,11 +369,11 @@ class GameBoard
         @cell_sum += 0
       end
     end
-    return @cell_sum
+    # return @cell_sum
     if @cell_sum == 4
-      vertical_win? == true
+      true
     else
-      vertical_win? == false
+      false
     end
   end
   # def diagonal_win?

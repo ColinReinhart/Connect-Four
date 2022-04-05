@@ -96,11 +96,13 @@ describe GameBoard do
     expect(game_board.horizontal_win?).to eq(true)
   end
 
-  xit 'can validate a verticle win' do
-    game_board.a_cells[:g6] = "X"
-    game_board.a_cells[:g5] = "X"
-    game_board.a_cells[:g4] = "X"
-    game_board.a_cells[:g3] = "X"
+  it 'can validate a verticle win' do
+    game_board = GameBoard.new
+    
+    game_board.a_cells[:a6] = "X"
+    game_board.a_cells[:a5] = "X"
+    game_board.a_cells[:a4] = "X"
+    game_board.a_cells[:a3] = "X"
 
   expect(game_board.vertical_win?).to eq(true)
   end
