@@ -604,6 +604,379 @@ class GameBoard
       false
     end
   end
- 
 
+  def vertical_win?
+    vert_array = @a_cells.fetch_values(:a1, :a2, :a3, :a4, :a5, :a6)
+    vert_array.each do |cell|
+      if cell == "X"
+        @cell_sum += 1
+      elsif cell == 'O'
+        @cell_sum = 0
+      else
+        @cell_sum += 0
+      end
+    end
+    if @cell_sum == 4
+      true
+    else
+      false
+    end
+    vert_array = @b_cells.fetch_values(:b1, :b2, :b3, :b4, :b5, :b6)
+    vert_array.each do |cell|
+      if cell == "X"
+        @cell_sum += 1
+      elsif cell == 'O'
+        @cell_sum = 0
+      else
+        @cell_sum += 0
+      end
+    end
+    if @cell_sum == 4
+      true
+    else
+      false
+    end
+    vert_array = @c_cells.fetch_values(:c1, :c2, :c3, :c4, :c5, :c6)
+    vert_array.each do |cell|
+      if cell == "X"
+        @cell_sum += 1
+      elsif cell == 'O'
+        @cell_sum = 0
+      else
+        @cell_sum += 0
+      end
+    end
+    if @cell_sum == 4
+      true
+    else
+      false
+    end
+    vert_array = @d_cells.fetch_values(:d1, :d2, :d3, :d4, :d5, :d6)
+    vert_array.each do |cell|
+      if cell == "X"
+        @cell_sum += 1
+      elsif cell == 'O'
+        @cell_sum = 0
+      else
+        @cell_sum += 0
+      end
+    end
+    if @cell_sum == 4
+      true
+    else
+      false
+    end
+    vert_array = @e_cells.fetch_values(:e1, :e2, :e3, :e4, :e5, :e6)
+    vert_array.each do |cell|
+      if cell == "X"
+        @cell_sum += 1
+      elsif cell == 'O'
+        @cell_sum = 0
+      else
+        @cell_sum += 0
+      end
+    end
+    if @cell_sum == 4
+      true
+    else
+      false
+    end
+    vert_array = @f_cells.fetch_values(:f1, :f2, :f3, :f4, :f5, :f6)
+    vert_array.each do |cell|
+      if cell == "X"
+        @cell_sum += 1
+      elsif cell == 'O'
+        @cell_sum = 0
+      else
+        @cell_sum += 0
+      end
+    end
+    if @cell_sum == 4
+      true
+    else
+      false
+    end
+    vert_array = @g_cells.fetch_values(:g1, :g2, :g3, :g4, :g5, :g6)
+    vert_array.each do |cell|
+      if cell == "X"
+        @cell_sum += 1
+      elsif cell == 'O'
+        @cell_sum = 0
+      else
+        @cell_sum += 0
+      end
+    end
+    if @cell_sum == 4
+      true
+    else
+      false
+    end
+  end
+
+  def diagonal_win?
+    dia_array1 = [
+      @a_cells.fetch_values(:a1),
+      @b_cells.fetch_values(:b2),
+      @c_cells.fetch_values(:c3),
+      @d_cells.fetch_values(:d4),
+      @e_cells.fetch_values(:e5),
+      @f_cells.fetch_values(:f6)
+    ]
+    dia_array1.flatten.each do |cell|
+      if cell == "X"
+        @cell_sum += 1
+      elsif cell == 'O'
+        @cell_sum = 0
+      else
+        @cell_sum += 0
+      end
+    end
+    # return @cell_sum
+    if @cell_sum == 4
+      true
+    else
+      false
+    end
+    dia_array2 = [
+      @a_cells.fetch_values(:a3),
+      @b_cells.fetch_values(:b4),
+      @c_cells.fetch_values(:c5),
+      @d_cells.fetch_values(:d6)
+    ]
+    dia_array2.flatten.each do |cell|
+      if cell == "X"
+        @cell_sum += 1
+      elsif cell == 'O'
+        @cell_sum = 0
+      else
+        @cell_sum += 0
+      end
+    end
+    # return @cell_sum
+    if @cell_sum == 4
+      true
+    else
+      false
+    end
+    dia_array3 = [
+      @a_cells.fetch_values(:a2),
+      @b_cells.fetch_values(:b3),
+      @c_cells.fetch_values(:c4),
+      @d_cells.fetch_values(:d5),
+      @e_cells.fetch_values(:e6)
+    ]
+    dia_array3.flatten.each do |cell|
+      if cell == "X"
+        @cell_sum += 1
+      elsif cell == 'O'
+        @cell_sum = 0
+      else
+        @cell_sum += 0
+      end
+    end
+    # return @cell_sum
+    if @cell_sum == 4
+      true
+    else
+      false
+    end
+    dia_array4 = [
+      @b_cells.fetch_values(:b1),
+      @c_cells.fetch_values(:c2),
+      @d_cells.fetch_values(:d3),
+      @e_cells.fetch_values(:e4),
+      @f_cells.fetch_values(:f5),
+      @g_cells.fetch_values(:g6)
+    ]
+    dia_array4.flatten.each do |cell|
+      if cell == "X"
+        @cell_sum += 1
+      elsif cell == 'O'
+        @cell_sum = 0
+      else
+        @cell_sum += 0
+      end
+    end
+    # return @cell_sum
+    if @cell_sum == 4
+      true
+    else
+      false
+    end
+    dia_array5 = [
+      @c_cells.fetch_values(:c1),
+      @d_cells.fetch_values(:d2),
+      @e_cells.fetch_values(:e3),
+      @f_cells.fetch_values(:f4),
+      @g_cells.fetch_values(:g5)
+    ]
+    dia_array4.flatten.each do |cell|
+      if cell == "X"
+        @cell_sum += 1
+      elsif cell == 'O'
+        @cell_sum = 0
+      else
+        @cell_sum += 0
+      end
+    end
+    # return @cell_sum
+    if @cell_sum == 4
+      true
+    else
+      false
+    end
+    dia_array6 = [
+      @d_cells.fetch_values(:d1),
+      @e_cells.fetch_values(:e2),
+      @f_cells.fetch_values(:f3),
+      @g_cells.fetch_values(:g4)
+    ]
+    dia_array6.flatten.each do |cell|
+      if cell == "X"
+        @cell_sum += 1
+      elsif cell == 'O'
+        @cell_sum = 0
+      else
+        @cell_sum += 0
+      end
+    end
+    # return @cell_sum
+    if @cell_sum == 4
+      true
+    else
+      false
+    end
+    dia_array7 = [
+      @a_cells.fetch_values(:a4),
+      @b_cells.fetch_values(:b3),
+      @c_cells.fetch_values(:c2),
+      @d_cells.fetch_values(:d1)
+    ]
+    dia_array7.flatten.each do |cell|
+      if cell == "X"
+        @cell_sum += 1
+      elsif cell == 'O'
+        @cell_sum = 0
+      else
+        @cell_sum += 0
+      end
+    end
+    # return @cell_sum
+    if @cell_sum == 4
+      true
+    else
+      false
+    end
+    dia_array8 = [
+      @a_cells.fetch_values(:a5),
+      @b_cells.fetch_values(:b4),
+      @c_cells.fetch_values(:c3),
+      @d_cells.fetch_values(:d2),
+      @e_cells.fetch_values(:e1)
+    ]
+    dia_array8.flatten.each do |cell|
+      if cell == "X"
+        @cell_sum += 1
+      elsif cell == 'O'
+        @cell_sum = 0
+      else
+        @cell_sum += 0
+      end
+    end
+    # return @cell_sum
+    if @cell_sum == 4
+      true
+    else
+      false
+    end
+    dia_array9 = [
+      @a_cells.fetch_values(:a6),
+      @b_cells.fetch_values(:b5),
+      @c_cells.fetch_values(:c4),
+      @d_cells.fetch_values(:d3),
+      @e_cells.fetch_values(:e2),
+      @f_cells.fetch_values(:f1)
+    ]
+    dia_array9.flatten.each do |cell|
+      if cell == "X"
+        @cell_sum += 1
+      elsif cell == 'O'
+        @cell_sum = 0
+      else
+        @cell_sum += 0
+      end
+    end
+    # return @cell_sum
+    if @cell_sum == 4
+      true
+    else
+      false
+    end
+    dia_array10 = [
+      @b_cells.fetch_values(:b6),
+      @c_cells.fetch_values(:c5),
+      @d_cells.fetch_values(:d4),
+      @e_cells.fetch_values(:e3),
+      @f_cells.fetch_values(:f2),
+      @g_cells.fetch_values(:g1)
+    ]
+    dia_array10.flatten.each do |cell|
+      if cell == "X"
+        @cell_sum += 1
+      elsif cell == 'O'
+        @cell_sum = 0
+      else
+        @cell_sum += 0
+      end
+    end
+    # return @cell_sum
+    if @cell_sum == 4
+      true
+    else
+      false
+    end
+    dia_array11 = [
+      @c_cells.fetch_values(:c6),
+      @d_cells.fetch_values(:d5),
+      @e_cells.fetch_values(:e4),
+      @f_cells.fetch_values(:f3),
+      @g_cells.fetch_values(:g2)
+    ]
+    dia_array11.flatten.each do |cell|
+      if cell == "X"
+        @cell_sum += 1
+      elsif cell == 'O'
+        @cell_sum = 0
+      else
+        @cell_sum += 0
+      end
+    end
+    # return @cell_sum
+    if @cell_sum == 4
+      true
+    else
+      false
+    end
+    dia_array12 = [
+      @d_cells.fetch_values(:d6),
+      @e_cells.fetch_values(:e5),
+      @f_cells.fetch_values(:f4),
+      @g_cells.fetch_values(:g3)
+    ]
+    dia_array12.flatten.each do |cell|
+      if cell == "X"
+        @cell_sum += 1
+      elsif cell == 'O'
+        @cell_sum = 0
+      else
+        @cell_sum += 0
+      end
+    end
+    # return @cell_sum
+    if @cell_sum == 4
+      true
+    else
+      false
+    end
+  end
 end
