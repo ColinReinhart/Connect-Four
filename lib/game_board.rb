@@ -62,7 +62,7 @@ class GameBoard
       g6: '.'
     }
     @cell_sum = 0
-    @win = false
+    # @win = false
 
 
   end
@@ -365,23 +365,20 @@ class GameBoard
         @cell_sum += 1
       elsif cell == 'O'
         @cell_sum = 0
-      else cell == "."
+      else
         @cell_sum += 0
-        if @cell_sum == 4
-          vertical_win? != false
-        end
       end
+    end
+    return @cell_sum
+    if @cell_sum == 4
+      vertical_win? == true
+    else
+      vertical_win? == false
     end
   end
   # def diagonal_win?
   #
   # end
 
-  # return display_board
 
-    # def place_token
-    #   place_token = @a_cells.find do |hash|
-    #     hash.value == '.'
-    #   end
-    # end
 end

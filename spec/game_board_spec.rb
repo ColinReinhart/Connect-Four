@@ -68,12 +68,13 @@ describe GameBoard do
 
   it 'can validate a vertical win' do
     game_board = GameBoard.new
+    # binding.pry
 
     game_board.a_cells[:a1] = 'X'
     game_board.a_cells[:a2] = 'X'
     game_board.a_cells[:a3] = 'X'
     game_board.a_cells[:a4] = 'X'
-
+# binding.pry
   expect(game_board.vertical_win?).to eq(true)
   end
 
