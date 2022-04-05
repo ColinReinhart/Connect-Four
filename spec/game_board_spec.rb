@@ -7,13 +7,13 @@ describe GameBoard do
   #   new_board = GameBoard.new
   # end
 
-  it "exists" do
+  xit "exists" do
     new_board = GameBoard.new
 
     expect(new_board).to be_an_instance_of(GameBoard)
   end
 
-  it 'has cells' do
+  xit 'has cells' do
     new_board = GameBoard.new
     expect(new_board.cells).to eq([{:a1=>".", :a2=>".", :a3=>".", :a4=>".", :a5=>".", :a6=>"."},
         {:b1=>".", :b2=>".", :b3=>".", :b4=>".", :b5=>".", :b6=>"."},
@@ -84,13 +84,26 @@ describe GameBoard do
   expect(game_board.diagonal_win).to eq(true)
   end
 
-  xit 'can validate a horizontal win' do
-    game_board.a_cells[:c4] = "X"
-    game_board.a_cells[:d4] = "X"
-    game_board.a_cells[:e4] = "X"
-    game_board.a_cells[:f4] = "X"
+  it 'can validate a horizontal win' do
+    game_board = GameBoard.new
 
-    expect(game_board.horizontal_win).to eq(true)
+    game_board.a_cells[:a1] = "X"
+    game_board.b_cells[:b1] = "X"
+    game_board.c_cells[:c1] = "X"
+    game_board.d_cells[:d1] = "X"
+    # binding.pry
+    expect(game_board.horiz_win?).to eq(true)
+  end
+
+  it 'can validate a horizontal win again' do
+    game_board = GameBoard.new
+
+    game_board.d_cells[:d1] = "X"
+    game_board.e_cells[:e1] = "X"
+    game_board.f_cells[:f1] = "X"
+    game_board.g_cells[:g1] = "X"
+    # binding.pry
+    expect(game_board.horiz_win?).to eq(true)
   end
 
   xit 'can validate a verticle win' do
