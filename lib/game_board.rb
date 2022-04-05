@@ -351,13 +351,6 @@ class GameBoard
   #   #Wyatt is working on this
   # end
 
-  # def vertical_win?
-  #   if @a_cells.fetch_values == ["X", "X", "X", "X", ".", "."] || ["O", "X", "X", "X", "X", "."] || ["X", "O", "X", "X", "X", "X"] || ["O", "O", "X", "X", "X", "X"]
-  #     vertical_win? == true
-  #   else
-  #     vertical_win? == false
-  #   end
-  # end
   def vertical_win?
     vert_array = @a_cells.fetch_values(:a1, :a2, :a3, :a4, :a5, :a6)
     vert_array.each do |cell|
@@ -369,7 +362,96 @@ class GameBoard
         @cell_sum += 0
       end
     end
-    # return @cell_sum
+    if @cell_sum == 4
+      true
+    else
+      false
+    end
+    vert_array = @b_cells.fetch_values(:b1, :b2, :b3, :b4, :b5, :b6)
+    vert_array.each do |cell|
+      if cell == "X"
+        @cell_sum += 1
+      elsif cell == 'O'
+        @cell_sum = 0
+      else
+        @cell_sum += 0
+      end
+    end
+    if @cell_sum == 4
+      true
+    else
+      false
+    end
+    vert_array = @c_cells.fetch_values(:c1, :c2, :c3, :c4, :c5, :c6)
+    vert_array.each do |cell|
+      if cell == "X"
+        @cell_sum += 1
+      elsif cell == 'O'
+        @cell_sum = 0
+      else
+        @cell_sum += 0
+      end
+    end
+    if @cell_sum == 4
+      true
+    else
+      false
+    end
+    vert_array = @d_cells.fetch_values(:d1, :d2, :d3, :d4, :d5, :d6)
+    vert_array.each do |cell|
+      if cell == "X"
+        @cell_sum += 1
+      elsif cell == 'O'
+        @cell_sum = 0
+      else
+        @cell_sum += 0
+      end
+    end
+    if @cell_sum == 4
+      true
+    else
+      false
+    end
+    vert_array = @e_cells.fetch_values(:e1, :e2, :e3, :e4, :e5, :e6)
+    vert_array.each do |cell|
+      if cell == "X"
+        @cell_sum += 1
+      elsif cell == 'O'
+        @cell_sum = 0
+      else
+        @cell_sum += 0
+      end
+    end
+    if @cell_sum == 4
+      true
+    else
+      false
+    end
+    vert_array = @f_cells.fetch_values(:f1, :f2, :f3, :f4, :f5, :f6)
+    vert_array.each do |cell|
+      if cell == "X"
+        @cell_sum += 1
+      elsif cell == 'O'
+        @cell_sum = 0
+      else
+        @cell_sum += 0
+      end
+    end
+    if @cell_sum == 4
+      true
+    else
+      false
+    end
+    vert_array = @g_cells.fetch_values(:g1, :g2, :g3, :g4, :g5, :g6)
+    vert_array.each do |cell|
+      if cell == "X"
+        @cell_sum += 1
+      elsif cell == 'O'
+        @cell_sum = 0
+      else
+        @cell_sum += 0
+      end
+    end
     if @cell_sum == 4
       true
     else
