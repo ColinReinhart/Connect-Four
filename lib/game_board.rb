@@ -381,7 +381,7 @@ class GameBoard
       @f_cells.fetch_values(:f2),
       @g_cells.fetch_values(:g2)
     ]
-    hor_array1.flatten.each do |cell|
+    hor_array2.flatten.each do |cell|
       if cell == "X"
         @cell_sum += 1
       elsif cell == 'O'
@@ -406,7 +406,82 @@ class GameBoard
       @f_cells.fetch_values(:f3),
       @g_cells.fetch_values(:g3)
     ]
-    hor_array1.flatten.each do |cell|
+    hor_array3.flatten.each do |cell|
+      if cell == "X"
+        @cell_sum += 1
+      elsif cell == 'O'
+        @cell_sum = 0
+      else
+        @cell_sum += 0
+      end
+    end
+    # return @cell_sum
+    if @cell_sum == 4
+      true
+    else
+      false
+    end
+
+    hor_array4 = [
+      @a_cells.fetch_values(:a4),
+      @b_cells.fetch_values(:b4),
+      @c_cells.fetch_values(:c4),
+      @d_cells.fetch_values(:d4),
+      @e_cells.fetch_values(:e4),
+      @f_cells.fetch_values(:f4),
+      @g_cells.fetch_values(:g4)
+    ]
+    hor_array4.flatten.each do |cell|
+      if cell == "X"
+        @cell_sum += 1
+      elsif cell == 'O'
+        @cell_sum = 0
+      else
+        @cell_sum += 0
+      end
+    end
+    # return @cell_sum
+    if @cell_sum == 4
+      true
+    else
+      false
+    end
+
+    hor_array5 = [
+      @a_cells.fetch_values(:a5),
+      @b_cells.fetch_values(:b5),
+      @c_cells.fetch_values(:c5),
+      @d_cells.fetch_values(:d5),
+      @e_cells.fetch_values(:e5),
+      @f_cells.fetch_values(:f5),
+      @g_cells.fetch_values(:g5)
+    ]
+    hor_array5.flatten.each do |cell|
+      if cell == "X"
+        @cell_sum += 1
+      elsif cell == 'O'
+        @cell_sum = 0
+      else
+        @cell_sum += 0
+      end
+    end
+    # return @cell_sum
+    if @cell_sum == 4
+      true
+    else
+      false
+    end
+
+    hor_array6 = [
+      @a_cells.fetch_values(:a6),
+      @b_cells.fetch_values(:b6),
+      @c_cells.fetch_values(:c6),
+      @d_cells.fetch_values(:d6),
+      @e_cells.fetch_values(:e6),
+      @f_cells.fetch_values(:f6),
+      @g_cells.fetch_values(:g6)
+    ]
+    hor_array6.flatten.each do |cell|
       if cell == "X"
         @cell_sum += 1
       elsif cell == 'O'

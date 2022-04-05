@@ -92,7 +92,7 @@ describe GameBoard do
     game_board.c_cells[:c1] = "X"
     game_board.d_cells[:d1] = "X"
     # binding.pry
-    expect(game_board.horiz_win?).to eq(true)
+    expect(game_board.player_horizontal_win?).to eq(true)
   end
 
   it 'can validate a horizontal win again' do
@@ -103,7 +103,7 @@ describe GameBoard do
     game_board.f_cells[:f1] = "X"
     game_board.g_cells[:g1] = "X"
     # binding.pry
-    expect(game_board.horiz_win?).to eq(true)
+    expect(game_board.player_horizontal_win?).to eq(true)
   end
 
   xit 'can validate a verticle win' do
