@@ -22,7 +22,7 @@ class ConnectFour
   end
 
   def start
-    loop do
+    # loop do
     puts welcome_message
     input = gets.chomp.upcase
     if input == "GO"
@@ -35,30 +35,34 @@ class ConnectFour
         @game_board.display_board
         chosen_spot = gets.chomp
         @game_board.place_piece(chosen_spot)
-          @game_board.vertical_win?
-        if @game_board.vertical_win? == true
-          @game_board.display_board
-          p "Player wins!"
-          break
-        end
+
         @turn_count += 1
         p "turn #{turn_count}"
+        # @game_board.win?
+        if @game_board.win? == true
+          @game_board.display_board
+          @game_board.reset
+          @turn_count = 0
+          break
+        end
         p "computer turn!"
         @game_board.display_board
         computer_spot = @game_board.computer_brain.shuffle
         @game_board.computer_piece(computer_spot[0])
-
+        @game_board.win?
         @turn_count += 1
         if @turn_count == 42
           @game_board.display_board
           p "it's a Draw"
+          @game_board.reset
+          @turn_count = 0
           break
         end
       end
     else
       p "Fine, don't play our game"
     end
-  end
+  # end
 end
     connect_four = ConnectFour.new
     connect_four.start

@@ -61,10 +61,70 @@ class GameBoard
       g5: '.',
       g6: '.'
     }
-    @cell_sum = 0
-    # @win = false
+    # @cell_sum = 0
 
 
+
+  end
+
+  def reset
+    @a_cells = {
+      a1: '.',
+      a2: '.',
+      a3: '.',
+      a4: '.',
+      a5: '.',
+      a6: '.'
+    }
+    @b_cells = {
+      b1: '.',
+      b2: '.',
+      b3: '.',
+      b4: '.',
+      b5: '.',
+      b6: '.'
+    }
+    @c_cells = {
+      c1: '.',
+      c2: '.',
+      c3: '.',
+      c4: '.',
+      c5: '.',
+      c6: '.'
+    }
+    @d_cells = {
+      d1: '.',
+      d2: '.',
+      d3: '.',
+      d4: '.',
+      d5: '.',
+      d6: '.'
+    }
+    @e_cells = {
+      e1: '.',
+      e2: '.',
+      e3: '.',
+      e4: '.',
+      e5: '.',
+      e6: '.'
+    }
+    @f_cells = {
+      f1: '.',
+      f2: '.',
+      f3: '.',
+      f4: '.',
+      f5: '.',
+      f6: '.'
+    }
+    @g_cells = {
+      g1: '.',
+      g2: '.',
+      g3: '.',
+      g4: '.',
+      g5: '.',
+      g6: '.'
+    }
+    @turn_count = 0
   end
 
   def column_full
@@ -347,115 +407,42 @@ class GameBoard
     puts ''
   end
 
-  def vertical_win?
+  def a_column_win?
     vert_array = @a_cells.fetch_values(:a1, :a2, :a3, :a4, :a5, :a6)
-    vert_array.each do |cell|
-      if cell == "X"
-        @cell_sum += 1
-      elsif cell == 'O'
-        @cell_sum = 0
-      else
-        @cell_sum += 0
-      end
-    end
-    if @cell_sum == 4
-       true
-    else
-      false
-    end
-    vert_array = @b_cells.fetch_values(:b1, :b2, :b3, :b4, :b5, :b6)
-    vert_array.each do |cell|
-      if cell == "X"
-        @cell_sum += 1
-      elsif cell == 'O'
-        @cell_sum = 0
-      else
-        @cell_sum += 0
-      end
-    end
-    if @cell_sum == 4
-      true
-    else
-      false
-    end
-    vert_array = @c_cells.fetch_values(:c1, :c2, :c3, :c4, :c5, :c6)
-    vert_array.each do |cell|
-      if cell == "X"
-        @cell_sum += 1
-      elsif cell == 'O'
-        @cell_sum = 0
-      else
-        @cell_sum += 0
-      end
-    end
-    if @cell_sum == 4
-      true
-    else
-      false
-    end
-    vert_array = @d_cells.fetch_values(:d1, :d2, :d3, :d4, :d5, :d6)
-    vert_array.each do |cell|
-      if cell == "X"
-        @cell_sum += 1
-      elsif cell == 'O'
-        @cell_sum = 0
-      else
-        @cell_sum += 0
-      end
-    end
-    if @cell_sum == 4
-      true
-    else
-      false
-    end
-    vert_array = @e_cells.fetch_values(:e1, :e2, :e3, :e4, :e5, :e6)
-    vert_array.each do |cell|
-      if cell == "X"
-        @cell_sum += 1
-      elsif cell == 'O'
-        @cell_sum = 0
-      else
-        @cell_sum += 0
-      end
-    end
-    if @cell_sum == 4
-      true
-    else
-      false
-    end
-    vert_array = @f_cells.fetch_values(:f1, :f2, :f3, :f4, :f5, :f6)
-    vert_array.each do |cell|
-      if cell == "X"
-        @cell_sum += 1
-      elsif cell == 'O'
-        @cell_sum = 0
-      else
-        @cell_sum += 0
-      end
-    end
-    if @cell_sum == 4
-      true
-    else
-      false
-    end
-    vert_array = @g_cells.fetch_values(:g1, :g2, :g3, :g4, :g5, :g6)
-    vert_array.each do |cell|
-      if cell == "X"
-        @cell_sum += 1
-      elsif cell == 'O'
-        @cell_sum = 0
-      else
-        @cell_sum += 0
-      end
-    end
-    if @cell_sum == 4
-      true
-    else
-      false
-    end
+    vert_array.join.include? "XXXX"
   end
 
-  def player_horizontal_win?
+  def b_column_win?
+    vert_array = @b_cells.fetch_values(:b1, :b2, :b3, :b4, :b5, :b6)
+    vert_array.join.include? "XXXX"
+  end
+
+  def c_column_win?
+    vert_array = @c_cells.fetch_values(:c1, :c2, :c3, :c4, :c5, :c6)
+    vert_array.join.include? "XXXX"
+  end
+
+  def d_column_win?
+    vert_array = @d_cells.fetch_values(:d1, :d2, :d3, :d4, :d5, :d6)
+    vert_array.join.include? "XXXX"
+  end
+
+  def e_column_win?
+    vert_array = @e_cells.fetch_values(:e1, :e2, :e3, :e4, :e5, :e6)
+    vert_array.join.include? "XXXX"
+  end
+
+  def f_column_win?
+    vert_array = @f_cells.fetch_values(:f1, :f2, :f3, :f4, :f5, :f6)
+    vert_array.join.include? "XXXX"
+  end
+
+  def g_column_win?
+    vert_array = @g_cells.fetch_values(:g1, :g2, :g3, :g4, :g5, :g6)
+    vert_array.join.include? "XXXX"
+  end
+
+  def row_1_win?
     hor_array1 = [
       @a_cells.fetch_values(:a1),
       @b_cells.fetch_values(:b1),
@@ -465,22 +452,9 @@ class GameBoard
       @f_cells.fetch_values(:f1),
       @g_cells.fetch_values(:g1)
     ]
-    hor_array1.flatten.each do |cell|
-      if cell == "X"
-        @cell_sum += 1
-      elsif cell == 'O'
-        @cell_sum = 0
-      else
-        @cell_sum += 0
-      end
-    end
-    # return @cell_sum
-    if @cell_sum == 4
-      true
-    else
-      false
-    end
-
+    hor_array1.join.include? "XXXX"
+  end
+  def row_2_win?
     hor_array2 = [
       @a_cells.fetch_values(:a2),
       @b_cells.fetch_values(:b2),
@@ -490,22 +464,9 @@ class GameBoard
       @f_cells.fetch_values(:f2),
       @g_cells.fetch_values(:g2)
     ]
-    hor_array2.flatten.each do |cell|
-      if cell == "X"
-        @cell_sum += 1
-      elsif cell == 'O'
-        @cell_sum = 0
-      else
-        @cell_sum += 0
-      end
-    end
-    # return @cell_sum
-    if @cell_sum == 4
-      true
-    else
-      false
-    end
-
+    hor_array2.join.include? "XXXX"
+  end
+  def row_3_win?
     hor_array3 = [
       @a_cells.fetch_values(:a3),
       @b_cells.fetch_values(:b3),
@@ -515,22 +476,9 @@ class GameBoard
       @f_cells.fetch_values(:f3),
       @g_cells.fetch_values(:g3)
     ]
-    hor_array3.flatten.each do |cell|
-      if cell == "X"
-        @cell_sum += 1
-      elsif cell == 'O'
-        @cell_sum = 0
-      else
-        @cell_sum += 0
-      end
-    end
-    # return @cell_sum
-    if @cell_sum == 4
-      true
-    else
-      false
-    end
-
+    hor_array3.join.include? "XXXX"
+  end
+  def row_4_win?
     hor_array4 = [
       @a_cells.fetch_values(:a4),
       @b_cells.fetch_values(:b4),
@@ -540,21 +488,9 @@ class GameBoard
       @f_cells.fetch_values(:f4),
       @g_cells.fetch_values(:g4)
     ]
-    hor_array4.flatten.each do |cell|
-      if cell == "X"
-        @cell_sum += 1
-      elsif cell == 'O'
-        @cell_sum = 0
-      else
-        @cell_sum += 0
-      end
-    end
-    if @cell_sum == 4
-      true
-    else
-      false
-    end
-
+    hor_array4.join.include? "XXXX"
+  end
+  def row_5_win?
     hor_array5 = [
       @a_cells.fetch_values(:a5),
       @b_cells.fetch_values(:b5),
@@ -564,21 +500,9 @@ class GameBoard
       @f_cells.fetch_values(:f5),
       @g_cells.fetch_values(:g5)
     ]
-    hor_array5.flatten.each do |cell|
-      if cell == "X"
-        @cell_sum += 1
-      elsif cell == 'O'
-        @cell_sum = 0
-      else
-        @cell_sum += 0
-      end
-    end
-    if @cell_sum == 4
-      true
-    else
-      false
-    end
-
+    hor_array5.join.include? "XXXX"
+  end
+  def row_6_win?
     hor_array6 = [
       @a_cells.fetch_values(:a6),
       @b_cells.fetch_values(:b6),
@@ -588,22 +512,17 @@ class GameBoard
       @f_cells.fetch_values(:f6),
       @g_cells.fetch_values(:g6)
     ]
-    hor_array6.flatten.each do |cell|
-      if cell == "X"
-        @cell_sum += 1
-      elsif cell == 'O'
-        @cell_sum = 0
-      else
-        @cell_sum += 0
-      end
-    end
-    # return @cell_sum
-    if @cell_sum == 4
+    hor_array6.join.include? "XXXX"
+  end
+
+  def win?
+    if a_column_win? == true || b_column_win? == true || c_column_win? == true || d_column_win? == true || e_column_win? == true || f_column_win? == true || g_column_win? == true ||
+      row_1_win? == true || row_2_win? == true || row_3_win? == true || row_4_win? == true || row_5_win? == true || row_6_win? == true
+      p "You are a winner!"
       true
     else
       false
     end
   end
-
 
 end
