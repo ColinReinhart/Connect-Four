@@ -1,7 +1,7 @@
 require 'pry'
 
 class GameBoard
-  attr_reader :cell_sum, :a_cells, :b_cells, :c_cells, :d_cells, :e_cells, :f_cells, :g_cells
+  attr_reader :a_cells, :b_cells, :c_cells, :d_cells, :e_cells, :f_cells, :g_cells
 
   def initialize #(game_board)
     # @game_board = game_board
