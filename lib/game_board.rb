@@ -515,9 +515,143 @@ class GameBoard
     hor_array6.join.include? "XXXX"
   end
 
+
+  def dia_1_win?
+    dia_array1 = [
+      @a_cells.fetch_values(:a1),
+      @b_cells.fetch_values(:b2),
+      @c_cells.fetch_values(:c3),
+      @d_cells.fetch_values(:d4),
+      @e_cells.fetch_values(:e5),
+      @f_cells.fetch_values(:f6)
+    ]
+    dia_array1.join.include? "XXXX"
+  end
+
+  def dia_2_win?
+    dia_array2 = [
+      @a_cells.fetch_values(:a3),
+      @b_cells.fetch_values(:b4),
+      @c_cells.fetch_values(:c5),
+      @d_cells.fetch_values(:d6)
+    ]
+    dia_array2.join.include? "XXXX"
+  end
+
+  def dia_3_win?
+    dia_array3 = [
+      @a_cells.fetch_values(:a2),
+      @b_cells.fetch_values(:b3),
+      @c_cells.fetch_values(:c4),
+      @d_cells.fetch_values(:d5),
+      @e_cells.fetch_values(:e6)
+    ]
+    dia_array3.join.include? "XXXX"
+  end
+
+  def dia_4_win?
+    dia_array4 = [
+      @b_cells.fetch_values(:b1),
+      @c_cells.fetch_values(:c2),
+      @d_cells.fetch_values(:d3),
+      @e_cells.fetch_values(:e4),
+      @f_cells.fetch_values(:f5),
+      @g_cells.fetch_values(:g6)
+    ]
+    dia_array4.join.include? "XXXX"
+  end
+
+  def dia_5_win?
+    dia_array5 = [
+      @c_cells.fetch_values(:c1),
+      @d_cells.fetch_values(:d2),
+      @e_cells.fetch_values(:e3),
+      @f_cells.fetch_values(:f4),
+      @g_cells.fetch_values(:g5)
+    ]
+    dia_array5.join.include? "XXXX"
+  end
+
+  def dia_6_win?
+    dia_array6 = [
+      @d_cells.fetch_values(:d1),
+      @e_cells.fetch_values(:e2),
+      @f_cells.fetch_values(:f3),
+      @g_cells.fetch_values(:g4)
+    ]
+    dia_array6.join.include? "XXXX"
+  end
+
+  def dia_7_win?
+    dia_array7 = [
+      @a_cells.fetch_values(:a4),
+      @b_cells.fetch_values(:b3),
+      @c_cells.fetch_values(:c2),
+      @d_cells.fetch_values(:d1)
+    ]
+    dia_array7.join.include? "XXXX"
+  end
+
+  def dia_8_win?
+    dia_array8 = [
+      @a_cells.fetch_values(:a5),
+      @b_cells.fetch_values(:b4),
+      @c_cells.fetch_values(:c3),
+      @d_cells.fetch_values(:d2),
+      @e_cells.fetch_values(:e1)
+    ]
+    dia_array8.join.include? "XXXX"
+  end
+
+  def dia_9_win?
+    dia_array9 = [
+      @a_cells.fetch_values(:a6),
+      @b_cells.fetch_values(:b5),
+      @c_cells.fetch_values(:c4),
+      @d_cells.fetch_values(:d3),
+      @e_cells.fetch_values(:e2),
+      @f_cells.fetch_values(:f1)
+    ]
+    dia_array9.join.include? "XXXX"
+  end
+
+  def dia_10_win?
+          dia_array10 = [
+      @b_cells.fetch_values(:b6),
+      @c_cells.fetch_values(:c5),
+      @d_cells.fetch_values(:d4),
+      @e_cells.fetch_values(:e3),
+      @f_cells.fetch_values(:f2),
+      @g_cells.fetch_values(:g1)
+    ]
+    dia_array10.join.include? "XXXX"
+  end
+
+  def dia_11_win?
+          dia_array11 = [
+      @c_cells.fetch_values(:c6),
+      @d_cells.fetch_values(:d5),
+      @e_cells.fetch_values(:e4),
+      @f_cells.fetch_values(:f3),
+      @g_cells.fetch_values(:g2)
+    ]
+    dia_array11.join.include? "XXXX"
+  end
+
+  def dia_12_win?
+          dia_array12 = [
+      @d_cells.fetch_values(:d6),
+      @e_cells.fetch_values(:e5),
+      @f_cells.fetch_values(:f4),
+      @g_cells.fetch_values(:g3)
+    ]
+    dia_array12.join.include? "XXXX"
+  end
+
   def win?
     if a_column_win? == true || b_column_win? == true || c_column_win? == true || d_column_win? == true || e_column_win? == true || f_column_win? == true || g_column_win? == true ||
-      row_1_win? == true || row_2_win? == true || row_3_win? == true || row_4_win? == true || row_5_win? == true || row_6_win? == true
+      row_1_win? == true || row_2_win? == true || row_3_win? == true || row_4_win? == true || row_5_win? == true || row_6_win? == true ||
+      dia_1_win? == true || dia_2_win? == true || dia_3_win? == true || dia_4_win? == true || dia_5_win? == true || dia_6_win? == true || dia_7_win? == true || dia_8_win? == true || dia_9_win? == true || dia_10_win? == true || dia_11_win? == true || dia_12_win? == true
       p "You are a winner!"
       true
     else
