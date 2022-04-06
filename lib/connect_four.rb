@@ -10,10 +10,8 @@ class ConnectFour
   end
 
   def new_board
-    @game_board = GameBoard.new
-    @turn_count = 0
+    @game_board.game_board
   end
-
 
   def welcome_message
     puts "Welcome to the Kribs-Reinhart Connect 4\n"+
@@ -24,40 +22,62 @@ class ConnectFour
   end
 
   def start
-    loop do
+    # loop do
     puts welcome_message
     input = gets.chomp.upcase
     if input == "GO"
       # game_board = GameBoard.new
       # player1 = Player.new
+      # until @game_board.vertical_win? == true
       loop do
         p "turn #{turn_count}"
         p "player turn!"
-        game_board.display_board
+        @game_board.display_board
         chosen_spot = gets.chomp
         @game_board.place_piece(chosen_spot)
-        @turn_count += 1
-        p "turn #{turn_count}"
-        p "computer turn!"
-        game_board.display_board
-        computer_spot = game_board.computer_brain.shuffle
-        @game_board.computer_piece(computer_spot[0])
 
         @turn_count += 1
+        p "turn #{turn_count}"
+        # @game_board.win?
+        if @game_board.win? == true
+          @game_board.display_board
+          @game_board.reset
+          @turn_count = 0
+          connect_four = ConnectFour.new
+          connect_four.start
+          break
+        end
+        p "computer turn!"
+        @game_board.display_board
+        computer_spot = @game_board.computer_brain.shuffle
+        @game_board.computer_piece(computer_spot[0])
+        # @game_board.win?
+        @turn_count += 1
+
+        if @game_board.comp_win? == true
+          @game_board.display_board
+          @game_board.reset
+          @turn_count = 0
+          connect_four = ConnectFour.new
+          connect_four.start
+          break
+        end
+
         if @turn_count == 42
-          game_board.display_board
+          @game_board.display_board
           p "it's a Draw"
-          new_board
+          @game_board.reset
+          @turn_count = 0
+          connect_four = ConnectFour.new
+          connect_four.start
           break
         end
       end
     else
       p "Fine, don't play our game"
-      break
     end
-  end
-  end
+  # end
+end
     connect_four = ConnectFour.new
     connect_four.start
 end
-   

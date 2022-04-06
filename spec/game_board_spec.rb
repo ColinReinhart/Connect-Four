@@ -7,7 +7,7 @@ describe GameBoard do
   #   new_board = GameBoard.new
   # end
 
-  xit "exists" do
+  it "exists" do
     new_board = GameBoard.new
 
     expect(new_board).to be_an_instance_of(GameBoard)
@@ -35,8 +35,8 @@ describe GameBoard do
 
   xit 'has new game board' do
     game_board = GameBoard.new
-    binding.pry
-  expect(game_board.new_board).to eq("A B C D E F G
+    # binding.pry
+  expect(game_board.display_board).to eq("A B C D E F G
     .......
     .......
     .......
@@ -57,13 +57,14 @@ describe GameBoard do
 
   end
 
-  xit 'can validate a horizontal win' do
+  it 'can validate a horizontal win' do
+    game_board = GameBoard.new
     game_board.a_cells[:a1] = "X"
-    game_board.a_cells[:b1] = "X"
-    game_board.a_cells[:c1] = "X"
-    game_board.a_cells[:d1] = "X"
-
-    expect(game_board.horizontal_win?).to eq(true)
+    game_board.b_cells[:b1] = "X"
+    game_board.c_cells[:c1] = "X"
+    game_board.d_cells[:d1] = "X"
+    # binding.pry
+    expect(game_board.row_1_win?).to eq(true)
   end
 
   it 'can validate a vertical win' do
@@ -74,8 +75,8 @@ describe GameBoard do
     game_board.a_cells[:a2] = 'X'
     game_board.a_cells[:a3] = 'X'
     game_board.a_cells[:a4] = 'X'
-# binding.pry
-  expect(game_board.vertical_win?).to eq(true)
+    # binding.pry
+  expect(game_board.a_column_win?).to eq(true)
   end
 
   xit 'can validate a diagonal win' do
@@ -96,30 +97,30 @@ describe GameBoard do
     game_board.c_cells[:c1] = "X"
     game_board.d_cells[:d1] = "X"
     # binding.pry
-    expect(game_board.player_horizontal_win?).to eq(true)
+    expect(game_board.row_1_win?).to eq(true)
   end
 
   it 'can validate a horizontal win again' do
     game_board = GameBoard.new
 
-    game_board.d_cells[:d1] = "X"
-    game_board.e_cells[:e1] = "X"
-    game_board.f_cells[:f1] = "X"
-    game_board.g_cells[:g1] = "X"
+    game_board.d_cells[:d6] = "X"
+    game_board.e_cells[:e6] = "X"
+    game_board.f_cells[:f6] = "X"
+    game_board.g_cells[:g6] = "X"
     # binding.pry
-    expect(game_board.player_horizontal_win?).to eq(true)
+    expect(game_board.row_6_win?).to eq(true)
 
   end
 
   it 'can validate a verticle win' do
     game_board = GameBoard.new
 
-    game_board.b_cells[:b6] = "X"
-    game_board.b_cells[:b5] = "X"
-    game_board.b_cells[:b4] = "X"
-    game_board.b_cells[:b3] = "X"
+    game_board.d_cells[:d6] = "X"
+    game_board.d_cells[:d5] = "X"
+    game_board.d_cells[:d4] = "X"
+    game_board.d_cells[:d3] = "X"
 
-  expect(game_board.vertical_win?).to eq(true)
+  expect(game_board.d_column_win?).to eq(true)
   end
   xit 'can validate a diagonal win' do
     game_board.a_cells[:g6] = "X"
