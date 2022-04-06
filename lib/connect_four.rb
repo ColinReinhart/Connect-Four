@@ -43,6 +43,8 @@ class ConnectFour
           @game_board.display_board
           @game_board.reset
           @turn_count = 0
+          connect_four = ConnectFour.new
+          connect_four.start
           break
         end
         p "computer turn!"
@@ -56,14 +58,18 @@ class ConnectFour
           @game_board.display_board
           @game_board.reset
           @turn_count = 0
+          connect_four = ConnectFour.new
+          connect_four.start
           break
         end
-        
+
         if @turn_count == 42
           @game_board.display_board
           p "it's a Draw"
           @game_board.reset
           @turn_count = 0
+          connect_four = ConnectFour.new
+          connect_four.start
           break
         end
       end
