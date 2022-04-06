@@ -49,8 +49,16 @@ class ConnectFour
         @game_board.display_board
         computer_spot = @game_board.computer_brain.shuffle
         @game_board.computer_piece(computer_spot[0])
-        @game_board.win?
+        # @game_board.win?
         @turn_count += 1
+
+        if @game_board.comp_win? == true
+          @game_board.display_board
+          @game_board.reset
+          @turn_count = 0
+          break
+        end
+        
         if @turn_count == 42
           @game_board.display_board
           p "it's a Draw"

@@ -648,11 +648,263 @@ class GameBoard
     dia_array12.join.include? "XXXX"
   end
 
+  def a_column_comp?
+    vert_array = @a_cells.fetch_values(:a1, :a2, :a3, :a4, :a5, :a6)
+    vert_array.join.include? "OOOO"
+  end
+
+  def b_column_comp?
+    vert_array = @b_cells.fetch_values(:b1, :b2, :b3, :b4, :b5, :b6)
+    vert_array.join.include? "OOOO"
+  end
+
+  def c_column_comp?
+    vert_array = @c_cells.fetch_values(:c1, :c2, :c3, :c4, :c5, :c6)
+    vert_array.join.include? "OOOO"
+  end
+
+  def d_column_comp?
+    vert_array = @d_cells.fetch_values(:d1, :d2, :d3, :d4, :d5, :d6)
+    vert_array.join.include? "OOOO"
+  end
+
+  def e_column_comp?
+    vert_array = @e_cells.fetch_values(:e1, :e2, :e3, :e4, :e5, :e6)
+    vert_array.join.include? "OOOO"
+  end
+
+  def f_column_comp?
+    vert_array = @f_cells.fetch_values(:f1, :f2, :f3, :f4, :f5, :f6)
+    vert_array.join.include? "OOOO"
+  end
+
+  def g_column_comp?
+    vert_array = @g_cells.fetch_values(:g1, :g2, :g3, :g4, :g5, :g6)
+    vert_array.join.include? "OOOO"
+  end
+
+  def row_1_comp?
+    hor_array1 = [
+      @a_cells.fetch_values(:a1),
+      @b_cells.fetch_values(:b1),
+      @c_cells.fetch_values(:c1),
+      @d_cells.fetch_values(:d1),
+      @e_cells.fetch_values(:e1),
+      @f_cells.fetch_values(:f1),
+      @g_cells.fetch_values(:g1)
+    ]
+    hor_array1.join.include? "OOOO"
+  end
+  def row_2_comp?
+    hor_array2 = [
+      @a_cells.fetch_values(:a2),
+      @b_cells.fetch_values(:b2),
+      @c_cells.fetch_values(:c2),
+      @d_cells.fetch_values(:d2),
+      @e_cells.fetch_values(:e2),
+      @f_cells.fetch_values(:f2),
+      @g_cells.fetch_values(:g2)
+    ]
+    hor_array2.join.include? "OOOO"
+  end
+  def row_3_comp?
+    hor_array3 = [
+      @a_cells.fetch_values(:a3),
+      @b_cells.fetch_values(:b3),
+      @c_cells.fetch_values(:c3),
+      @d_cells.fetch_values(:d3),
+      @e_cells.fetch_values(:e3),
+      @f_cells.fetch_values(:f3),
+      @g_cells.fetch_values(:g3)
+    ]
+    hor_array3.join.include? "OOOO"
+  end
+  def row_4_comp?
+    hor_array4 = [
+      @a_cells.fetch_values(:a4),
+      @b_cells.fetch_values(:b4),
+      @c_cells.fetch_values(:c4),
+      @d_cells.fetch_values(:d4),
+      @e_cells.fetch_values(:e4),
+      @f_cells.fetch_values(:f4),
+      @g_cells.fetch_values(:g4)
+    ]
+    hor_array4.join.include? "OOOO"
+  end
+  def row_5_comp?
+    hor_array5 = [
+      @a_cells.fetch_values(:a5),
+      @b_cells.fetch_values(:b5),
+      @c_cells.fetch_values(:c5),
+      @d_cells.fetch_values(:d5),
+      @e_cells.fetch_values(:e5),
+      @f_cells.fetch_values(:f5),
+      @g_cells.fetch_values(:g5)
+    ]
+    hor_array5.join.include? "OOOO"
+  end
+  def row_6_comp?
+    hor_array6 = [
+      @a_cells.fetch_values(:a6),
+      @b_cells.fetch_values(:b6),
+      @c_cells.fetch_values(:c6),
+      @d_cells.fetch_values(:d6),
+      @e_cells.fetch_values(:e6),
+      @f_cells.fetch_values(:f6),
+      @g_cells.fetch_values(:g6)
+    ]
+    hor_array6.join.include? "OOOO"
+  end
+
+
+  def dia_1_comp?
+    dia_array1 = [
+      @a_cells.fetch_values(:a1),
+      @b_cells.fetch_values(:b2),
+      @c_cells.fetch_values(:c3),
+      @d_cells.fetch_values(:d4),
+      @e_cells.fetch_values(:e5),
+      @f_cells.fetch_values(:f6)
+    ]
+    dia_array1.join.include? "OOOO"
+  end
+
+  def dia_2_comp?
+    dia_array2 = [
+      @a_cells.fetch_values(:a3),
+      @b_cells.fetch_values(:b4),
+      @c_cells.fetch_values(:c5),
+      @d_cells.fetch_values(:d6)
+    ]
+    dia_array2.join.include? "OOOO"
+  end
+
+  def dia_3_comp?
+    dia_array3 = [
+      @a_cells.fetch_values(:a2),
+      @b_cells.fetch_values(:b3),
+      @c_cells.fetch_values(:c4),
+      @d_cells.fetch_values(:d5),
+      @e_cells.fetch_values(:e6)
+    ]
+    dia_array3.join.include? "OOOO"
+  end
+
+  def dia_4_comp?
+    dia_array4 = [
+      @b_cells.fetch_values(:b1),
+      @c_cells.fetch_values(:c2),
+      @d_cells.fetch_values(:d3),
+      @e_cells.fetch_values(:e4),
+      @f_cells.fetch_values(:f5),
+      @g_cells.fetch_values(:g6)
+    ]
+    dia_array4.join.include? "OOOO"
+  end
+
+  def dia_5_comp?
+    dia_array5 = [
+      @c_cells.fetch_values(:c1),
+      @d_cells.fetch_values(:d2),
+      @e_cells.fetch_values(:e3),
+      @f_cells.fetch_values(:f4),
+      @g_cells.fetch_values(:g5)
+    ]
+    dia_array5.join.include? "OOOO"
+  end
+
+  def dia_6_comp?
+    dia_array6 = [
+      @d_cells.fetch_values(:d1),
+      @e_cells.fetch_values(:e2),
+      @f_cells.fetch_values(:f3),
+      @g_cells.fetch_values(:g4)
+    ]
+    dia_array6.join.include? "OOOO"
+  end
+
+  def dia_7_comp?
+    dia_array7 = [
+      @a_cells.fetch_values(:a4),
+      @b_cells.fetch_values(:b3),
+      @c_cells.fetch_values(:c2),
+      @d_cells.fetch_values(:d1)
+    ]
+    dia_array7.join.include? "OOOO"
+  end
+
+  def dia_8_comp?
+    dia_array8 = [
+      @a_cells.fetch_values(:a5),
+      @b_cells.fetch_values(:b4),
+      @c_cells.fetch_values(:c3),
+      @d_cells.fetch_values(:d2),
+      @e_cells.fetch_values(:e1)
+    ]
+    dia_array8.join.include? "OOOO"
+  end
+
+  def dia_9_comp?
+    dia_array9 = [
+      @a_cells.fetch_values(:a6),
+      @b_cells.fetch_values(:b5),
+      @c_cells.fetch_values(:c4),
+      @d_cells.fetch_values(:d3),
+      @e_cells.fetch_values(:e2),
+      @f_cells.fetch_values(:f1)
+    ]
+    dia_array9.join.include? "OOOO"
+  end
+
+  def dia_10_comp?
+          dia_array10 = [
+      @b_cells.fetch_values(:b6),
+      @c_cells.fetch_values(:c5),
+      @d_cells.fetch_values(:d4),
+      @e_cells.fetch_values(:e3),
+      @f_cells.fetch_values(:f2),
+      @g_cells.fetch_values(:g1)
+    ]
+    dia_array10.join.include? "OOOO"
+  end
+
+  def dia_11_comp?
+          dia_array11 = [
+      @c_cells.fetch_values(:c6),
+      @d_cells.fetch_values(:d5),
+      @e_cells.fetch_values(:e4),
+      @f_cells.fetch_values(:f3),
+      @g_cells.fetch_values(:g2)
+    ]
+    dia_array11.join.include? "OOOO"
+  end
+
+  def dia_12_comp?
+          dia_array12 = [
+      @d_cells.fetch_values(:d6),
+      @e_cells.fetch_values(:e5),
+      @f_cells.fetch_values(:f4),
+      @g_cells.fetch_values(:g3)
+    ]
+    dia_array12.join.include? "OOOO"
+  end
+
   def win?
     if a_column_win? == true || b_column_win? == true || c_column_win? == true || d_column_win? == true || e_column_win? == true || f_column_win? == true || g_column_win? == true ||
       row_1_win? == true || row_2_win? == true || row_3_win? == true || row_4_win? == true || row_5_win? == true || row_6_win? == true ||
       dia_1_win? == true || dia_2_win? == true || dia_3_win? == true || dia_4_win? == true || dia_5_win? == true || dia_6_win? == true || dia_7_win? == true || dia_8_win? == true || dia_9_win? == true || dia_10_win? == true || dia_11_win? == true || dia_12_win? == true
       p "You are a winner!"
+      true
+    else
+      false
+    end
+  end
+
+  def comp_win?
+    if a_column_comp? == true || b_column_comp? == true || c_column_comp? == true || d_column_comp? == true || e_column_comp? == true || f_column_comp? == true || g_column_comp? == true ||
+      row_1_comp? == true || row_2_comp? == true || row_3_comp? == true || row_4_comp? == true || row_5_comp? == true || row_6_comp? == true ||
+      dia_1_comp? == true || dia_2_comp? == true || dia_3_comp? == true || dia_4_comp? == true || dia_5_comp? == true || dia_6_comp? == true || dia_7_comp? == true || dia_8_comp? == true || dia_9_comp? == true || dia_10_comp? == true || dia_11_comp? == true || dia_12_comp? == true
+      p "computer is winner!"
       true
     else
       false
