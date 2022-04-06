@@ -359,7 +359,7 @@ class GameBoard
       end
     end
     if @cell_sum == 4
-      true
+       true
     else
       false
     end
@@ -604,6 +604,6 @@ class GameBoard
       false
     end
   end
- 
+
 
 end

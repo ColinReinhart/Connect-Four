@@ -7,7 +7,7 @@ describe GameBoard do
   #   new_board = GameBoard.new
   # end
 
-  xit "exists" do
+  it "exists" do
     new_board = GameBoard.new
 
     expect(new_board).to be_an_instance_of(GameBoard)
@@ -35,8 +35,8 @@ describe GameBoard do
 
   xit 'has new game board' do
     game_board = GameBoard.new
-    binding.pry
-  expect(game_board.new_board).to eq("A B C D E F G
+    # binding.pry
+  expect(game_board.display_board).to eq("A B C D E F G
     .......
     .......
     .......
@@ -57,24 +57,25 @@ describe GameBoard do
 
   end
 
-  xit 'can validate a horizontal win' do
+  it 'can validate a horizontal win' do
+    game_board = GameBoard.new
     game_board.a_cells[:a1] = "X"
-    game_board.a_cells[:b1] = "X"
-    game_board.a_cells[:c1] = "X"
-    game_board.a_cells[:d1] = "X"
-
-    expect(game_board.horizontal_win?).to eq(true)
+    game_board.b_cells[:b1] = "X"
+    game_board.c_cells[:c1] = "X"
+    game_board.d_cells[:d1] = "X"
+    # binding.pry
+    expect(game_board.player_horizontal_win?).to eq(true)
   end
 
   it 'can validate a vertical win' do
     game_board = GameBoard.new
     # binding.pry
 
-    game_board.a_cells[:a1] = 'X'
-    game_board.a_cells[:a2] = 'X'
+    game_board.a_cells[:a5] = 'X'
+    game_board.a_cells[:a6] = 'X'
     game_board.a_cells[:a3] = 'X'
     game_board.a_cells[:a4] = 'X'
-# binding.pry
+    # binding.pry
   expect(game_board.vertical_win?).to eq(true)
   end
 
