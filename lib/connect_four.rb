@@ -1,5 +1,4 @@
 require './lib/game_board'
-require './lib/player'
 
 class ConnectFour
   attr_reader :game_board, :turn_count
@@ -14,7 +13,8 @@ class ConnectFour
   end
 
   def welcome_message
-    puts "Welcome to the Kribs-Reinhart Connect 4\n"+
+    puts "______MAIN MENU______\n"+
+    "Welcome to the Kribs-Reinhart Connect 4\n"+
     "In this game you will play against an unintelegent computer\n"+
     "See if you can connect 4 before the Dumbputer does\n"+
     "Type 'GO' to start the game\n"+
@@ -30,24 +30,30 @@ class ConnectFour
       # player1 = Player.new
       # until @game_board.vertical_win? == true
       loop do
-        p "turn #{turn_count}"
-        p "player turn!"
+        p "Turn #{turn_count}: Select a letter A_G >>>"
         @game_board.display_board
         chosen_spot = gets.chomp
         @game_board.place_piece(chosen_spot)
 
         @turn_count += 1
-        p "turn #{turn_count}"
+        p "Turn #{turn_count}: Computer turn"
         # @game_board.win?
         if @game_board.win? == true
           @game_board.display_board
           @game_board.reset
           @turn_count = 0
-          connect_four = ConnectFour.new
-          connect_four.start
+          p "Yay, you're a winner!"
+          p "Would you like to play again? [Y/N]"
+          play_again = gets.chomp.upcase
+          if play_again == 'Y'
+            connect_four = ConnectFour.new
+            connect_four.start
+          elsif play_again == 'N'
+            p "Goodbye"
+            return
+          end
           break
         end
-        p "computer turn!"
         @game_board.display_board
         computer_spot = @game_board.computer_brain.shuffle
         @game_board.computer_piece(computer_spot[0])
@@ -58,18 +64,33 @@ class ConnectFour
           @game_board.display_board
           @game_board.reset
           @turn_count = 0
-          connect_four = ConnectFour.new
-          connect_four.start
+          p "Oh no, looks like you lost!"
+          p "Would you like to play again? [Y/N]"
+          play_again = gets.chomp.upcase
+          if play_again == 'Y'
+            connect_four = ConnectFour.new
+            connect_four.start
+          elsif play_again == 'N'
+            p "Goodbye"
+            return
+          end
           break
         end
 
         if @turn_count == 42
           @game_board.display_board
-          p "it's a Draw"
           @game_board.reset
           @turn_count = 0
-          connect_four = ConnectFour.new
-          connect_four.start
+          p "It's a Draw"
+          p "Would you like to play again? [Y/N]"
+          play_again = gets.chomp.upcase
+          if play_again == 'Y'
+            connect_four = ConnectFour.new
+            connect_four.start
+          elsif play_again == 'N'
+            p "Goodbye"
+            return
+          end
           break
         end
       end

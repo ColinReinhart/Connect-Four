@@ -266,7 +266,6 @@ class GameBoard
   end
 
   def computer_invalid
-    p "pick again dummy"
     computer_piece(computer_brain.shuffle[0])
   end
 
@@ -893,7 +892,6 @@ class GameBoard
     if a_column_win? == true || b_column_win? == true || c_column_win? == true || d_column_win? == true || e_column_win? == true || f_column_win? == true || g_column_win? == true ||
       row_1_win? == true || row_2_win? == true || row_3_win? == true || row_4_win? == true || row_5_win? == true || row_6_win? == true ||
       dia_1_win? == true || dia_2_win? == true || dia_3_win? == true || dia_4_win? == true || dia_5_win? == true || dia_6_win? == true || dia_7_win? == true || dia_8_win? == true || dia_9_win? == true || dia_10_win? == true || dia_11_win? == true || dia_12_win? == true
-      p "You are a winner!"
       true
     else
       false
@@ -904,7 +902,6 @@ class GameBoard
     if a_column_comp? == true || b_column_comp? == true || c_column_comp? == true || d_column_comp? == true || e_column_comp? == true || f_column_comp? == true || g_column_comp? == true ||
       row_1_comp? == true || row_2_comp? == true || row_3_comp? == true || row_4_comp? == true || row_5_comp? == true || row_6_comp? == true ||
       dia_1_comp? == true || dia_2_comp? == true || dia_3_comp? == true || dia_4_comp? == true || dia_5_comp? == true || dia_6_comp? == true || dia_7_comp? == true || dia_8_comp? == true || dia_9_comp? == true || dia_10_comp? == true || dia_11_comp? == true || dia_12_comp? == true
-      p "computer is winner!"
       true
     else
       false
